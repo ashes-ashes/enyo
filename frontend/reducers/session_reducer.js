@@ -2,7 +2,7 @@ import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../actions/session_ac
 
 const initialState = { id: null };
 
-const sessionReducer = (state = initialState, action) => {
+const sessionReducer = (state=initialState, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
 
@@ -13,7 +13,7 @@ const sessionReducer = (state = initialState, action) => {
         case LOGOUT_CURRENT_USER:
             return initialState;
         default:
-            return state;
+            return newState;
     }
 }
 

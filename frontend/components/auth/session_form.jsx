@@ -5,7 +5,7 @@ export default class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: "",
+            email: "",
             password: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,23 +29,34 @@ export default class SessionForm extends React.Component {
         let { formType } = this.props;
 
         return (
-            <div>
+            <div className="session-form-backdrop">
+            <div className="session-form-container">
                 <h2>{this.props.formType}</h2>
-                <ul>
-                    {this.state.errors ?
-                        errors.map((error) => <li>{error}</li>) :
+                <ul className="errors-list">
+                    {this.props.errors ?
+                        this.props.errors.map((error) => <li>{error}</li>) :
                         ""}
                 </ul>
-                <form>
-                    <label>Username
-            <input
+                <form className="session-form">
+                    {this.props.formType === 'signup' ? 
+                        <label><span>Username</span>
+                            <input
+                                type="text"
+                                value={this.state.username}
+                                onChange={this.handleInput("username")}
+                            />
+                        </label> :
+                        ""
+                    }
+                    <label><span>Email</span>
+                        <input
                             type="text"
-                            value={this.state.username}
-                            onChange={this.handleInput("username")}
+                            value={this.state.email}
+                            onChange={this.handleInput("email")}
                         />
                     </label>
-                    <label>Password
-            <input
+                    <label><span>Password</span>
+                        <input
                             type="password"
                             value={this.state.password}
                             onChange={this.handleInput("password")}
@@ -54,6 +65,7 @@ export default class SessionForm extends React.Component {
                     <button onClick={this.handleSubmit}>{formType}</button>
                 </form>
                 <Link to={formType === 'login' ? "/signup" : "/login"}>{formType === 'login' ? "sign up" : "log in"}</Link>
+            </div>
             </div>
         )
     }
