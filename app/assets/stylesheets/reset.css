@@ -18,7 +18,8 @@ time, mark, audio, video, button {
 	font: inherit;
     vertical-align: baseline;
     text-decoration: none;
-    color: inherit
+	color: inherit;
+	cursor: default;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

@@ -8,7 +8,9 @@ body {
     color: white
 }
 
-
+a:hover {
+    cursor: pointer;
+}
 
 
 // splash screen css
@@ -20,6 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .splash-header {
@@ -48,13 +51,33 @@ body {
     font-size: 40px;
     font-weight: bold;
     font-family: 'Rajdhani', sans-serif;
+    display: block;
 }
 
+.splash ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.full-logo {
+    display: flex;
+    flex-direction: row;
+}
+
+
 button {
-    border: 1px solid white;
+    border: 1px solid lightgray;
+    color: lightgray;
     background-color: transparent;
     margin-left: 10px;
-    padding: 5px 10px;
+    padding: 7px 15px;
     border-radius: 20px;
+    font-size: 14px;
+}
+
+button:hover {
+    color: white;
+    border-color: white;
+    cursor: pointer;
 }
  
