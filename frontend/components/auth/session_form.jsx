@@ -11,6 +11,7 @@ export default class SessionForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFormSwitch = this.handleFormSwitch.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
 
     handleInput(type) {
@@ -21,9 +22,18 @@ export default class SessionForm extends React.Component {
         }
     }
 
+    handleDemoLogin(e) {
+        e.preventDefault();
+        let user = {
+            email: "hermes@olympus.io",
+            password: "psychopomp"
+        };
+        this.props.processForm(user);
+    }
+
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
+        let user = Object.assign({}, this.state);
         this.props.processForm(user);
     }
 
@@ -70,7 +80,13 @@ export default class SessionForm extends React.Component {
                             onChange={this.handleInput("password")}
                         />
                     </label>
+                    <div className="sessionButtons">
                         <button onClick={this.handleSubmit}>{formType === 'login' ? "log in" : "create account"}</button>
+                        {this.props.formType === 'login' ?
+                            <button className="demo-button" onClick={this.handleDemoLogin}>demo</button> :
+                            ""
+                        }
+                    </div>
                 </form>
                 <p><Link to={formType === 'login' ? "/signup" : "/login"} onClick={this.handleFormSwitch}>{formType === 'login' ? "oh no i don't have an account" : "wait, i already have one of these"}</Link></p>
             </div>

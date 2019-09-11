@@ -39,13 +39,30 @@ form {
         width: 400px;
     }
 
+    .session-buttons {
+        display: flex;
+        flex-direction: row;
+        width: 400px;
+        justify-content: center;
+        align-items: center;
+    }
+
     button {
         background-color: $secondary;
-        width: 380px;
         height: 50px;
         align-self: center;
-        margin: 20px;
+        margin: 20px 10px;
         border-radius: 3px;
+        width: 180px;
+    }
+
+    button:first-of-type:last-of-type {
+        width: 380px;
+    }
+
+
+    .demo-button {
+        background-color: #8a1e1e
     }
 
     button:hover {
