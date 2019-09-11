@@ -2,12 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import '../config-vars.scss';
+
 .session-form-backdrop {
     width: 100%;
     position: absolute;
     top: 0;
     bottom: 0vh;
-    background-image: linear-gradient(#A2E6C4, #67BB91);
+    background-image: linear-gradient($light-secondary, $secondary);
 }
 
 form {
@@ -23,7 +25,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba($color: #333333, $alpha: 1.0);
+    background-color: rgba($color: $primary, $alpha: 1.0);
     padding: 40px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px #000000;
@@ -38,7 +40,7 @@ form {
     }
 
     button {
-        background-color: #A2E6C4;
+        background-color: $light-secondary;
         width: 100%;
         height: 50px;
         align-self: center;
@@ -47,22 +49,22 @@ form {
     }
 
     button:hover {
-        background-color: #67BB91
+        background-color: $secondary
     }
 
     label {
         margin: 10px;
-        color: gray;
+        color: $mid-primary;
     }
 
     input {
         width: 100%;
         height: 40px;
-        background-color: rgba($color: #292929, $alpha: 0.7);
+        background-color: rgba($color: $dark-primary, $alpha: 0.7);
         padding: 0px 20px;
         box-sizing: border-box;
         border-radius: 3px;
-        border: 1px solid #222222
+        border: 1px solid $darker-primary
     }
 
     label span {
@@ -75,20 +77,20 @@ form {
     }
 
     input:hover {
-        border: 1px solid rgba($color: #67BB91, $alpha: 0.5);
+        border: 1px solid rgba($color: $secondary, $alpha: 0.5);
     }
 
     input:focus {
-        border: 1px solid #67BB91;
+        border: 1px solid $secondary;
     }
 
     a {
-        color: gray;
+        color: $mid-primary;
         font-size: 12px;
     }
 
     a:hover {
-        color: lightgray;
+        color: $light-primary;
     }
 
 
