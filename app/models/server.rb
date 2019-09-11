@@ -34,9 +34,8 @@ class Server < ApplicationRecord
 
     def reset_invite_code!
         code = ""
-        begin
+        until code != Server.find_by(invite_code: code)
             code = SecureRandom.urlsafe_base64(10)
-            retry if !!Server.find_by(invite_code: code)
         end
         self.invite_code = code
     end
