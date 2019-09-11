@@ -9,6 +9,8 @@ export default class SessionForm extends React.Component {
             password: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFormSwitch = this.handleFormSwitch.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
 
     handleInput(type) {
@@ -23,6 +25,10 @@ export default class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+    }
+
+    handleFormSwitch() {
+        this.props.clearErrors();
     }
 
     render() {
@@ -66,7 +72,7 @@ export default class SessionForm extends React.Component {
                     </label>
                         <button onClick={this.handleSubmit}>{formType === 'login' ? "log in" : "create account"}</button>
                 </form>
-                <p><Link to={formType === 'login' ? "/signup" : "/login"}>{formType === 'login' ? "oh no i don't have an account" : "wait, i already have one of these"}</Link></p>
+                <p><Link to={formType === 'login' ? "/signup" : "/login"} onClick={this.handleFormSwitch}>{formType === 'login' ? "oh no i don't have an account" : "wait, i already have one of these"}</Link></p>
             </div>
             </div>
         )
