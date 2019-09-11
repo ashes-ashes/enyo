@@ -1,0 +1,82 @@
+// splash screen css
+
+@import './config-vars.scss';
+
+.splash {
+    background-color: $primary;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.splash-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.splash-text {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.splash h1 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Rajdhani', sans-serif;
+    display: block;
+}
+
+.splash ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.full-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.splash button, .splash li a {
+    border: 1px solid $light-primary;
+    color: $light-primary;
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.splash li {
+    margin-left: 10px;
+}
+
+.splash button:hover, .splash li a:hover {
+    color: $lightest-primary;
+    border-color: $lightest-primary;
+    cursor: pointer;
+}
+
+.splash button:active, .splash li a:active {
+    background-color: $lightest-primary;
+    color: $primary
+}
+
+.splash .logo-unicode {
+    font-size: 40px;
+    color: $secondary;
+}

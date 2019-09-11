@@ -36,12 +36,12 @@ form {
 
 
     form {
-        width: 380px;
+        width: 400px;
     }
 
     button {
-        background-color: $light-secondary;
-        width: 100%;
+        background-color: $secondary;
+        width: 380px;
         height: 50px;
         align-self: center;
         margin: 20px;
@@ -49,7 +49,7 @@ form {
     }
 
     button:hover {
-        background-color: $secondary
+        background-color: $light-secondary
     }
 
     label {
@@ -87,6 +87,7 @@ form {
     a {
         color: $mid-primary;
         font-size: 12px;
+        text-decoration: underline
     }
 
     a:hover {
