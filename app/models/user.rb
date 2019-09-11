@@ -24,6 +24,18 @@ class User < ApplicationRecord
     validate :email_is_valid
     validates :password, length: {minimum: 6, allow_nil: true}
 
+    has_many :owned_servers,
+        foreign_key: :user_id,
+        class_name: "Server"
+
+    has_many :server_memberships,
+        foreign_key: :user_id,
+        class_name: "ServerMembership",
+        dependent: :destroy
+
+    has_many :joined_servers,
+        through: :server_memberships,
+        source: :server
 
     def password=(password)
         @password = password
