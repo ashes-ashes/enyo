@@ -13,6 +13,8 @@
 
 class Server < ApplicationRecord
 
+    after_initialize :ensure_invite_code
+
     belongs_to :owner,
         foreign_key: :owner_id,
         class_name: "User"
@@ -25,5 +27,18 @@ class Server < ApplicationRecord
     has_many :members,
         through: :memberships,
         source: :user
+
+    def ensure_invite_code
+        self.reset_invite_code! if !!self.invite_code
+    end
+
+    def reset_invite_code!
+        code = ""
+        begin
+            code = SecureRandom.urlsafe_base64(10)
+            retry if !!Server.find_by(invite_code: code)
+        end
+        self.invite_code = code
+    end
 
 end
