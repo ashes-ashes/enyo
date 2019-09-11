@@ -8,7 +8,7 @@ const Splash = (props) => (
     <div className="splash">
         <header className="splash-header">
             <a href="/" className="full-logo">
-                
+                <span className="logo-unicode">☍</span>
                 <h1>enyo</h1>
             </a>
                 {!!props.currentUser ? 

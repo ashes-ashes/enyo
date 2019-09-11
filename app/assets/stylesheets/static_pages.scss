@@ -79,6 +79,7 @@ h2 {
 .full-logo {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 
@@ -86,8 +87,8 @@ h2 {
     border: 1px solid $light-primary;
     color: $light-primary;
     background-color: transparent;
-    padding: 7px 15px;
-    border-radius: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
     font-size: 14px;
 }
 
@@ -104,4 +105,9 @@ h2 {
 .splash button:active, .splash li a:active {
     background-color: $lightest-primary;
     color: $primary
+}
+
+.splash .logo-unicode {
+    font-size: 40px;
+    color: $secondary;
 }
