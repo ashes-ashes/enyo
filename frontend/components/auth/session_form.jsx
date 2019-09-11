@@ -62,7 +62,7 @@ export default class SessionForm extends React.Component {
                             onChange={this.handleInput("password")}
                         />
                     </label>
-                    <button onClick={this.handleSubmit}>{formType}</button>
+                        <button onClick={this.handleSubmit}>{formType === 'login' ? "log in" : "create account"}</button>
                 </form>
                 <Link to={formType === 'login' ? "/signup" : "/login"}>{formType === 'login' ? "sign up" : "log in"}</Link>
             </div>
