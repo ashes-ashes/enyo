@@ -5,7 +5,9 @@ export default class BenchIndex extends React.Component {
         return (
             <div>
                 <ul>
-                    
+                    {this.props.servers.map((server) => {
+                        return <ServerIndexItem server={server} key={server.id}/>
+                    })}
                 </ul>
             </div>
         )

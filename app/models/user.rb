@@ -34,13 +34,9 @@ class User < ApplicationRecord
     class_name: "ServerMembership",
     dependent: :destroy
     
-    has_many :joined_servers,
+    has_many :servers,
     through: :server_memberships,
     source: :server
-    
-    def servers
-        self.owned_servers.or(self.joined_servers)
-    end
     
     def password=(password)
         @password = password

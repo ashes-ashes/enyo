@@ -1,7 +1,11 @@
 class Api::ServersController < ApplicationController
     def index
-        @servers = current_user.servers
-        render :index
+        if current_user
+            @servers = current_user.servers
+            render :index
+        else
+            render json: ["Outis has no servers"]
+        end
     end
 
     def show

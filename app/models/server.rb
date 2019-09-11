@@ -29,12 +29,12 @@ class Server < ApplicationRecord
         source: :user
 
     def ensure_invite_code
-        self.reset_invite_code! if !!self.invite_code
+        self.reset_invite_code! if !self.invite_code
     end
 
     def reset_invite_code!
         code = ""
-        until code != Server.find_by(invite_code: code)
+        until !Server.find_by(invite_code: code)
             code = SecureRandom.urlsafe_base64(10)
         end
         self.invite_code = code

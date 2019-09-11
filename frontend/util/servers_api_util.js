@@ -5,3 +5,10 @@ export const fetchServers = () => {
         url: 'api/servers'
     });
 }
+
+export const fetchServer = (id) => {
+    return $.ajax({
+        method: "GET",
+        url: `api/servers/${id}`
+    })
+}
