@@ -31,10 +31,12 @@ export default class SessionForm extends React.Component {
         return (
             <div className="session-form-backdrop">
             <div className="session-form-container">
-                <h2>{this.props.formType}</h2>
+                    <h2>{formType === 'login' ? "log in" : "sign up"}</h2>
                 <ul className="errors-list">
                     {this.props.errors ?
-                        this.props.errors.map((error) => <li>{error}</li>) :
+                            this.props.errors.map((error, idx) => <li key={idx}><i className="material-icons">
+                                report_problem
+                            </i><span>{error}</span></li>) :
                         ""}
                 </ul>
                 <form className="session-form">
@@ -64,7 +66,7 @@ export default class SessionForm extends React.Component {
                     </label>
                         <button onClick={this.handleSubmit}>{formType === 'login' ? "log in" : "create account"}</button>
                 </form>
-                <Link to={formType === 'login' ? "/signup" : "/login"}>{formType === 'login' ? "sign up" : "log in"}</Link>
+                <p><Link to={formType === 'login' ? "/signup" : "/login"}>{formType === 'login' ? "oh no i don't have an account" : "wait, i already have one of these"}</Link></p>
             </div>
             </div>
         )

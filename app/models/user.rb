@@ -17,13 +17,21 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
+    before_save :downcase_email
+
     validates :username, :email, :password_digest, :session_token, presence: true
     validates :email, uniqueness: true
+    validate :email_is_valid
     validates :password, length: {minimum: 6, allow_nil: true}
+
 
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)
+    end
+
+    def downcase_email
+        self.email = self.email.downcase
     end
 
     def is_password?(password)
@@ -41,9 +49,18 @@ class User < ApplicationRecord
     end
 
     def self.find_by_credentials(email, password)
-        user = User.find_by(email: email)
+        user = User.find_by(email: email.downcase)
         return nil if !user
         user.is_password?(password) ? user : nil
     end
+
+    private 
+
+    def email_is_valid
+        if !(/^[\w\+]+\@\w+\.\w+$/ =~ self.email)
+            self.errors.add(:email, 'must be valid')
+        end
+    end
+    
 
 end
