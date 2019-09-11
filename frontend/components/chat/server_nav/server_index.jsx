@@ -1,7 +1,15 @@
 import React from 'react';
 
-export default class BenchIndex extends React.Component {
+import ServerIndexItem from './server_index_item';
+
+export default class ServerIndex extends React.Component {
+
+    componentDidMount() {
+        this.props.fetchServers();
+    }
+
     render() {
+
         return (
             <div>
                 <ul>

@@ -13,7 +13,7 @@ const Splash = (props) => (
             </a>
                 {!!props.currentUser ? 
                 <ul>
-                    <li><button>open</button></li>
+                    <li><Link to="/servers">open</Link></li>
                     <li><button onClick={props.logout}>log out</button></li>
                 </ul> :
                 <ul>
