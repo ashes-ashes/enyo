@@ -15,7 +15,7 @@
         height: 100vh;
     }
 
-    .server-index-item, button {
+    .server-index-item, .new-server-button {
         display: block;
         width: 50px;
         height: 50px;
@@ -64,11 +64,11 @@
         color: $light-secondary;
     }
 
-    .server-index-item:hover, button:hover {
+    .server-index-item:hover, .new-server-button:hover {
         border-radius: 15px;
     }
 
-    button:hover {
+    .new-server-button:hover {
         background-color: $secondary;
         .server-placeholder {
             color: $lightest-primary;
