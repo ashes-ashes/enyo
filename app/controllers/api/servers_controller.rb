@@ -17,6 +17,10 @@ class Api::ServersController < ApplicationController
         @server = Server.new(server_params)
 
         if @server.save
+            ServerMembership.create({
+                user_id: current_user.id,
+                server_id: @server.id
+            })
             render :show
         else 
             render json: @server.errors.full_messages, status: 422
