@@ -23,7 +23,13 @@ export const fetchServers = () => dispatch => (
 export const fetchServer = (id) => dispatch => (
     APIUtil.fetchServer(id)
         .then(
-            (server) => dispatch(receiveServers(server))
+            (server) => dispatch(receiveServer(server))
         )
 );
 
+export const createServer = (server) => dispatch => (
+    APIUtil.createServer(server)
+        .then(
+            (server) => dispatch(receiveServer(server))
+        )
+);

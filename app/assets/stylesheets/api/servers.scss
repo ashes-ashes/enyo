@@ -39,10 +39,11 @@
     .server-index-item::before,
     .new-server-button::before {
         content: "";
+        visibility: hidden;
         position: absolute;
-        top: 25px;
+        top: 20px;
         left: -12px;
-        height: 0px;
+        height: 5px;
         width: 4px;
         background-color: $light-primary;
         z-index: 1;
@@ -53,6 +54,7 @@
 
     .server-index-item:hover::before, 
     .new-server-button:hover::before {
+        visibility: visible;
         top: 15px;
         height: 20px;
     }

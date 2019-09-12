@@ -1,9 +1,21 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-export default class ServerIndexItem extends React.Component {
+class ServerIndexItem extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.clickHandler = this.clickHandler.bind(this);
+    }
+
+    clickHandler() {
+        this.props.history.replace(`/servers/${this.props.server.id}`)
+    }
+
     render () {
         return (
-            <li className="server-index-item tooltip">
+            <li className="server-index-item tooltip" onClick={this.clickHandler}>
                 <div className="server-placeholder">{this.props.server.name.slice(0, 1)}
                 </div>
                 <span className="tooltip-text">{this.props.server.name}</span>
@@ -11,3 +23,5 @@ export default class ServerIndexItem extends React.Component {
         )
     }
 }
+
+export default withRouter(ServerIndexItem)

@@ -20,3 +20,18 @@ export const createServer = (server) => {
         data: {server: server}
     })
 };
+
+export const updateServer = (server) => {
+    return $.ajax({
+        method: "PATCH",
+        url: `api/servers/${server.id}`,
+        data: {server: server}
+    })
+}
+
+export const deleteServer = (serverId) => {
+    return $.ajax({
+        method: "DELETE",
+        url: `api/servers/${serverId}`
+    })
+}

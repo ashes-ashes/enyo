@@ -3,7 +3,7 @@ import {
     RECEIVE_SERVER 
 } from "../actions/server_actions";
 
-const serversReducer = (state = [], action) => {
+const serversReducer = (state = {}, action) => {
     Object.freeze(state);
 
     switch (action.type) {
