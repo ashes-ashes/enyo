@@ -17,7 +17,9 @@ export default class ServerIndex extends React.Component {
                     {this.props.servers.map((server) => {
                         return <ServerIndexItem server={server} key={server.id}/>
                     })}
-                    <li><button className="new-server-button"><span className="server-placeholder">+</span></button></li>
+                    <li><button className="new-server-button tooltip"><span className="server-placeholder">+</span>
+                    <span className="tooltip-text">New Server</span></button>
+                    </li>
                 </ul>
             </div>
         )

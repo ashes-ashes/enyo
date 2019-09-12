@@ -10,7 +10,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 70px;
+        width: 75px;
         background-color: $darker-primary;
         height: 100vh;
     }
@@ -23,7 +23,9 @@
         border-radius: 25px;
         margin-top: 10px;
         transition-property: border-radius;
-        transition-duration: 0.3s;
+        transition-duration: 0.1s;
+        transition-timing-function: linear;
+        position: relative;
 
 
         .server-placeholder {
@@ -34,18 +36,73 @@
         }
     }
 
+    .server-index-item::before,
+    .new-server-button::before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: -12px;
+        height: 0px;
+        width: 4px;
+        background-color: $light-primary;
+        z-index: 1;
+        border-radius: 0px 3px 3px 0px;
+        transition-property: height, top;
+        transition-duration: 0.3s;
+    }
+
+    .server-index-item:hover::before, 
+    .new-server-button:hover::before {
+        top: 15px;
+        height: 20px;
+    }
+
 
     .new-server-button .server-placeholder {
         color: $light-secondary;
     }
 
     .server-index-item:hover, button:hover {
-        background-color: $secondary;
         border-radius: 15px;
+    }
+
+    button:hover {
+        background-color: $secondary;
         .server-placeholder {
             color: $lightest-primary;
         }
     }
+
+    .tooltip-text {
+        visibility: hidden;
+        background-color: rgba($color: $darkest-primary, $alpha: 0.7);
+        color: $light-primary;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        white-space: nowrap;
+        position: absolute;
+        z-index: 1;
+        left: 60px;
+        top: 8px;
+    }
+
+    .tooltip:hover .tooltip-text {
+        visibility: visible;
+    }
+
+    .tooltip-text::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent rgba($color: $darkest-primary, $alpha: 0.7) transparent transparent;
+    }
+
+
 
 
 }
