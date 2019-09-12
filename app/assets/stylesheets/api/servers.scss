@@ -6,7 +6,7 @@
 
 .server-index {
 
-    .server-index-list {
+    ul {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -15,13 +15,15 @@
         height: 100vh;
     }
 
-    .server-index-item, .new-server-button {
+    .server-index-item, button {
         display: block;
         width: 50px;
         height: 50px;
         background-color: $primary;
         border-radius: 25px;
         margin-top: 10px;
+        transition-property: border-radius;
+        transition-duration: 0.3s;
 
 
         .server-placeholder {
@@ -32,8 +34,17 @@
         }
     }
 
+
     .new-server-button .server-placeholder {
         color: $light-secondary;
+    }
+
+    .server-index-item:hover, button:hover {
+        background-color: $secondary;
+        border-radius: 15px;
+        .server-placeholder {
+            color: $lightest-primary;
+        }
     }
 
 
