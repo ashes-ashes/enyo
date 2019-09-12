@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
 
         if @user.save
             login(@user)
-            render json: @user
+            render json: :show
         else
             render json: @user.errors.full_messages, status: 422
         end
@@ -14,6 +14,7 @@ class Api::UsersController < ApplicationController
 
     def show
         @user = User.find_by(id: params[:id])
+        @server_memberships = ServerMemberships.find_by(user_id: params[:id])
 
         render :show
     end

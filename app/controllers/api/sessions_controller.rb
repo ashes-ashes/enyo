@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
             #     owner_id: @user.id,
             #     is_home: true
             # })
-            render json: @user
+            render "api/users/#{@user.id}"
         else
             render json: ["Invalid email or password."], status: 400
         end
