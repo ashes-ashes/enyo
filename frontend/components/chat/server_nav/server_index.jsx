@@ -5,8 +5,19 @@ import ServerIndexItem from './server_index_item';
 
 export default class ServerIndex extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            
+        }
+    }
+
     componentDidMount() {
         this.props.fetchServers();
+    }
+
+    handleNewServer() {
+
     }
 
     render() {
@@ -18,9 +29,10 @@ export default class ServerIndex extends React.Component {
                         return <ServerIndexItem server={server} key={server.id}/>
                     })}
                     <li><button className="new-server-button tooltip"><span className="server-placeholder">+</span>
-                    <span className="tooltip-text">New Server</span></button>
+                    <span className="tooltip-text">Add Server</span></button>
                     </li>
                 </ul>
+                
             </div>
         )
     }
