@@ -11,8 +11,8 @@ export default class ServerIndex extends React.Component {
     render() {
 
         return (
-            <div>
-                <ul>
+            <div className="server-index">
+                <ul className="server-index-list">
                     {this.props.servers.map((server) => {
                         return <ServerIndexItem server={server} key={server.id}/>
                     })}

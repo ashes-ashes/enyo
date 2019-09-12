@@ -5,10 +5,19 @@
 @import './config-vars.scss';
 @import './splash.scss';
 
+html {
+    overflow: hidden;
+    height: 100;
+}
+
+
 body {
     background-color: $primary;
     font-family: 'Roboto', sans-serif;
-    color: $lightest-primary
+    color: $lightest-primary;
+
+    height: 100%;
+    overflow: auto;
 }
 
 a:hover {

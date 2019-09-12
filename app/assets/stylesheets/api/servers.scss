@@ -1,3 +1,33 @@
 // Place all the styles related to the api/Servers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import '../config-vars.scss';
+
+.server-index {
+
+    .server-index-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100px;
+        background-color: $dark-primary;
+        height: 100vh;
+    }
+
+    .server-index-item {
+        display: block;
+        width: 80px;
+        height: 80px;
+        background-color: $darker-primary;
+        border-radius: 40px;
+
+
+        .server-placeholder {
+            font-size: 60px;
+            color: $secondary
+        }
+    }
+
+
+}
