@@ -26,10 +26,10 @@ export default class PickServerForm extends React.Component {
 
         switch (this.state.formType) {
             case "new":
-                form = <NewServerFormContainer />;
+                form = <NewServerFormContainer hideForm={this.props.hideForm}/>;
                 break;
             case "join":
-                form = <JoinServerFormContainer />;
+                form = <JoinServerFormContainer hideForm={this.props.hideForm}/>;
                 break;
             default:
                 form = (<div className="pick-server-form-container">
