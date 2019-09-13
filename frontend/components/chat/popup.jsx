@@ -20,7 +20,6 @@ const Popup = (props) => {
             break;
         default:
             popup = "";
-            break;
     };
 
     let closePopup = () => {

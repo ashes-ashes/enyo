@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import ServerIndexItem from './server_index_item';
-import PickServerForm from './server_modal/pick_server_form';
 
 export default class ServerIndex extends React.Component {
 
@@ -14,6 +13,12 @@ export default class ServerIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchServers();
+    }
+
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.servers.length != this.props.servers.length)
+        this.props.receiveCurrentPopup();
     }
 
     setPopup() {
