@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from 'react-router-dom';
-import { AuthRoute } from '../util/routes_util';
+import { AuthRoute, ProtectedRoute } from '../util/routes_util';
 
 import SplashContainer from "./splash/splash_container"
 import LoginFormContainer from "./auth/login_form_container"
@@ -12,7 +12,7 @@ const App = () => (
         <Route exact path="/" component={SplashContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
-        <Route path="/servers" component={ChatContainer} />
+        <ProtectedRoute path="/servers" component={ChatContainer} />
     </div>
 );
 

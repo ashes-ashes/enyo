@@ -11,13 +11,17 @@
     z-index: 2;
 }
 
+
 *[class*="server-form-container"] {
     position: fixed;
-    width: 400px;
+    width: 440px;
     height: 200px;
-    top: 200px;
-    left: 200px;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
     z-index: 3;
+    box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
@@ -54,6 +58,10 @@
         background-color: $light-secondary;
     }
 
+    button:active {
+        background-color: $dark-secondary;
+    }
+
     label {
         color: $light-secondary;
         display: flex;
@@ -70,9 +78,16 @@
 
 
     input[type=text] {
-        border-bottom: 2px solid $mid-primary;
+        border-bottom: 1px solid $light-primary;
         color: $mid-primary;
         margin: 10px;
+        width: 300px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    input[type=text]:focus {
+        border-bottom: 1px solid $mid-primary;
     }
 
 }
