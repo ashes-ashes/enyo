@@ -23,6 +23,7 @@ export default class NewServerForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let server = Object.assign({}, this.state);
+        console.log(server);
         this.props.createServer(server);
     }
 
@@ -42,7 +43,7 @@ export default class NewServerForm extends React.Component {
                         ""}
                 </ul> */}
                 <form className="new-server-form">
-                    <label><span>Name</span>
+                    <label><span>what's its name?</span>
                         <input
                             type="text"
                             value={this.state.name}

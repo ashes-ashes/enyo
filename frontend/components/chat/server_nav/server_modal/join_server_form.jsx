@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default class NewServerForm extends React.Component {
+export default class JoinServerForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ""
+            invite_code: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         // this.handleFormSwitch = this.handleFormSwitch.bind(this);
@@ -23,7 +23,7 @@ export default class NewServerForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let server = Object.assign({}, this.state);
-        this.props.createServer(server);
+        this.props.createServerMembership(server);
     }
 
     // handleFormSwitch() {
@@ -33,7 +33,7 @@ export default class NewServerForm extends React.Component {
     render() {
         return (
             <div className="new-server-form-container">
-                <h2>create a new server</h2>
+                <h2>join an existing server</h2>
                 {/* <ul className="errors-list">
                     {this.props.errors ?
                         this.props.errors.map((error, idx) => <li key={idx}><i className="material-icons">
@@ -42,14 +42,14 @@ export default class NewServerForm extends React.Component {
                         ""}
                 </ul> */}
                 <form className="new-server-form">
-                    <label><span>Name</span>
+                    <label><span>– enter an invite code –</span>
                         <input
                             type="text"
-                            value={this.state.name}
-                            onChange={this.handleInput("name")}
+                            value={this.state.invite_code}
+                            onChange={this.handleInput("invite_code")}
                         />
                     </label>
-                    <button onClick={this.handleSubmit}>create</button>
+                    <button onClick={this.handleSubmit}>join</button>
                 </form>
                 <p>this will be a link</p>
             </div>
