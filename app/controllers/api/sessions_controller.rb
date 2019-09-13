@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
         @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
         if @user
             login(@user)
-            redirect_to "api/users/#{@user.id}"
+            redirect_to "/api/users/#{@user.id}"
         else
             render json: ["Invalid email or password."], status: 400
         end
