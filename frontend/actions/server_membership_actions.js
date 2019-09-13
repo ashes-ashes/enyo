@@ -4,7 +4,7 @@ import * as APIUtil from '../util/server_memberships_api_util';
 export const RECEIVE_SERVER_MEMBERSHIP = "RECEIVE_SERVER_MEMBERSHIP";
 
 const receiveServerMembership = (serverMembership) => ({
-    type: RECEIVE_SERVERS,
+    type: RECEIVE_SERVER_MEMBERSHIP,
     serverMembership
 })
 
