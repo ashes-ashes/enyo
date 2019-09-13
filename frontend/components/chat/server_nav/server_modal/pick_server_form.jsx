@@ -34,7 +34,7 @@ export default class PickServerForm extends React.Component {
             default:
                 form = (<div className="pick-server-form-container">
                     <h2>Pick your source</h2>
-                    <div>
+                    <div className="pick-server-button-container">
                         <button onClick={this.handleClick("new")}>Create a server</button>
                         <button onClick={this.handleClick("join")}>Join a server</button>
                     </div>

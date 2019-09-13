@@ -25,6 +25,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 
     border-radius: 10px;
     padding: 20px;
@@ -32,7 +33,28 @@
     background-color: $lightest-primary;
 
     h2 {
-        color: $secondary;
+        color: $light-secondary;
     }
+
+    .pick-server-button-container {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        button {
+            background-color: $secondary;
+            height: 50px;
+            margin: 0px 10px;
+            border-radius: 3px;
+            width: 180px;
+        }
+
+        button:hover {
+            background-color: $light-secondary;
+        }
+    }
+
+    
 
 }

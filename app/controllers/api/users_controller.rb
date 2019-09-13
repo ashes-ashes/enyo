@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
 
     def show
         @user = User.find_by(id: params[:id])
-        @server_memberships = ServerMemberships.find_by(user_id: params[:id])
+        @server_memberships = ServerMembership.where(user_id: params[:id])
 
         render :show
     end
