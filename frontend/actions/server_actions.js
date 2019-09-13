@@ -2,7 +2,9 @@ export const RECEIVE_SERVERS = "RECEIVE_SERVERS";
 export const RECEIVE_SERVER = "RECEIVE_SERVER";
 export const REMOVE_SERVER = "REMOVE_SERVER";
 
+
 import * as APIUtil from '../util/servers_api_util';
+import { receiveFormErrors } from './error_actions';
 
 const receiveServers = (servers) => ({
     type: RECEIVE_SERVERS,
@@ -19,6 +21,7 @@ const removeServer = (serverId) => ({
     serverId
 })
 
+
 export const fetchServers = () => dispatch => (
     APIUtil.fetchServers()
         .then(
@@ -29,14 +32,15 @@ export const fetchServers = () => dispatch => (
 export const fetchServer = (serverId) => dispatch => (
     APIUtil.fetchServer(serverId)
         .then(
-            (server) => dispatch(receiveServer(server))
+            (server) => dispatch(receiveServer(server)),
         )
 );
 
 export const createServer = (server) => dispatch => (
     APIUtil.createServer(server)
         .then(
-            (server) => dispatch(receiveServer(server))
+            (server) => dispatch(receiveServer(server)),
+            (err) => dispatch(receiveFormErrors(err))
         )
 );
 

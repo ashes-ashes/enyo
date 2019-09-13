@@ -5,7 +5,7 @@ import { createServerMembership } from '../../../../actions/server_membership_ac
 import JoinServerForm from './join_server_form'
 
 const mapStateToProps = (state, ownProps) => ({
-
+    errors: state.errors.form
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

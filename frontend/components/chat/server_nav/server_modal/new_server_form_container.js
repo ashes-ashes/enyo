@@ -5,7 +5,7 @@ import { createServer } from '../../../../actions/server_actions'
 import NewServerForm from './new_server_form'
 
 const mapStateToProps = (state, ownProps) => ({
-
+    errors: state.errors.form
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

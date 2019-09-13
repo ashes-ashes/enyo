@@ -35,13 +35,13 @@ export default class NewServerForm extends React.Component {
         return (
             <div className="new-server-form-container">
                 <h2>create a new server</h2>
-                {/* <ul className="errors-list">
+                <ul className="errors-list">
                     {this.props.errors ?
                         this.props.errors.map((error, idx) => <li key={idx}><i className="material-icons">
                             report_problem
                         </i><span>{error}</span></li>) :
                         ""}
-                </ul> */}
+                </ul>
                 <form className="new-server-form">
                     <label><span>what's its name?</span>
                         <input
@@ -52,7 +52,7 @@ export default class NewServerForm extends React.Component {
                     </label>
                     <button onClick={this.handleSubmit}>create</button>
                 </form>
-                <p>this will be a link</p>
+                {/* <p>this will be a link</p> */}
             </div>
         )
     }

@@ -12,6 +12,9 @@
 
 class ServerMembership < ApplicationRecord
 
+    validates :nickname, length: { maximum: 30, allow_nil: true }
+    validates_uniqueness_of :server_id, scope: [:user_id], message: "is hosting you already!"
+
     belongs_to :user,
         foreign_key: :user_id,
         class_name: "User"

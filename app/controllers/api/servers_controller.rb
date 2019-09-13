@@ -14,12 +14,11 @@ class Api::ServersController < ApplicationController
     end
 
     def create
+        
         @server = Server.new(
             name: params[:server][:name],
             owner_id: current_user.id,
         )
-
-
 
         if @server.save
             ServerMembership.create({
