@@ -8,27 +8,16 @@ export default class ServerIndex extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            showForm: false
-        }
-        this.showForm = this.showForm.bind(this);
-        this.hideForm = this.hideForm.bind(this);
+
+        this.setPopup = this.setPopup.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchServers();
     }
 
-    showForm() {
-        this.setState({
-            showForm: true
-        })
-    }
-
-    hideForm() {
-        this.setState({
-            showForm: false
-        })
+    setPopup() {
+        this.props.receiveCurrentPopup("pick")
     }
 
     render() {
@@ -39,11 +28,10 @@ export default class ServerIndex extends React.Component {
                     {this.props.servers.map((server) => {
                         return <ServerIndexItem server={server} key={server.id}/>
                     })}
-                    <li><button className="new-server-button tooltip" onClick={this.showForm}><span className="server-placeholder">+</span>
+                    <li><button className="new-server-button tooltip" onClick={this.setPopup}><span className="server-placeholder">+</span>
                     <span className="tooltip-text">Add Server</span></button>
                     </li>
                 </ul>
-                {this.state.showForm ? <PickServerForm hideForm={this.hideForm}/> : ""}
             </div>
         )
     }
