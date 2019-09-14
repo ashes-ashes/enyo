@@ -28,6 +28,8 @@ class Server < ApplicationRecord
         through: :memberships,
         source: :user
 
+    has_one_attached :icon
+
     def ensure_invite_code
         self.reset_invite_code! if !self.invite_code
     end
