@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import IconInput from './icon_input';
+
 export default class NewServerForm extends React.Component {
     constructor(props) {
         super(props);
@@ -8,7 +10,6 @@ export default class NewServerForm extends React.Component {
             name: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleFormSwitch = this.handleFormSwitch.bind(this);
         this.handleInput = this.handleInput.bind(this);
     }
 
@@ -27,9 +28,6 @@ export default class NewServerForm extends React.Component {
         this.props.createServer(server);
     }
 
-    // handleFormSwitch() {
-    //     this.props.clearErrors();
-    // }
 
     render() {
         return (
@@ -43,16 +41,18 @@ export default class NewServerForm extends React.Component {
                         ""}
                 </ul>
                 <form className="new-server-form">
-                    <label><span>what's its name?</span>
-                        <input
-                            type="text"
-                            value={this.state.name}
-                            onChange={this.handleInput("name")}
-                        />
-                    </label>
+                    <div className="side-by-side">
+                        <label><span>what's its name?</span>
+                            <input
+                                type="text"
+                                value={this.state.name}
+                                onChange={this.handleInput("name")}
+                            />
+                        </label>
+                        <IconInput />
+                    </div>
                     <button onClick={this.handleSubmit}>create</button>
                 </form>
-                {/* <p>this will be a link</p> */}
             </div>
         )
     }

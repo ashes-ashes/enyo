@@ -18,6 +18,7 @@ class Api::ServersController < ApplicationController
         @server = Server.new(
             name: params[:server][:name],
             owner_id: current_user.id,
+            icon: params[:icon]
         )
 
         if @server.save
@@ -55,7 +56,7 @@ class Api::ServersController < ApplicationController
     private
 
     def server_params
-        params.require(:server).permit(:name, :owner_id, :is_home)
+        params.require(:server).permit(:name, :owner_id, :is_home, :icon)
     end
 
 end
