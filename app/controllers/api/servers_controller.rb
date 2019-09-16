@@ -18,7 +18,7 @@ class Api::ServersController < ApplicationController
         @server = Server.new(
             name: params[:server][:name],
             owner_id: current_user.id,
-            icon: params[:icon]
+            icon: params[:server][:icon]
         )
 
         if @server.save

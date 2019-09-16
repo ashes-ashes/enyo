@@ -36,8 +36,8 @@ export const fetchServer = (serverId) => dispatch => (
         )
 );
 
-export const createServer = (server) => dispatch => (
-    APIUtil.createServer(server)
+export const createServer = (formData) => dispatch => (
+    APIUtil.createServer(formData)
         .then(
             (server) => dispatch(receiveServer(server)),
             (err) => dispatch(receiveFormErrors(err))

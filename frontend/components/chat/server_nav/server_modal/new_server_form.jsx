@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import IconInput from './icon_input';
-
 export default class NewServerForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ""
+            name: "",
+            imageUrl: "",
+            imageFile: null
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.handleUpload = this.handleUpload.bind(this);
     }
 
     handleInput(type) {
@@ -23,9 +24,30 @@ export default class NewServerForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let server = Object.assign({}, this.state);
-        console.log(server);
-        this.props.createServer(server);
+
+        let formData = new FormData();
+        formData.append('server[name]', this.state.name);
+        
+        if (this.state.imageFile) {
+            formData.append('server[icon]', this.state.imageFile);
+        }
+
+        this.props.createServer(formData);
+    }
+
+    handleUpload(e) {
+        const reader = new FileReader();
+        const file = e.currentTarget.files[0];
+        reader.onloadend = () => {
+            this.setState({ imageUrl: reader.result, imageFile: file });
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            this.setState({ imageUrl: "", imageFile: null });
+        }
+
     }
 
 
@@ -49,7 +71,10 @@ export default class NewServerForm extends React.Component {
                                 onChange={this.handleInput("name")}
                             />
                         </label>
-                        <IconInput />
+                        <label className="icon-input"><div className="icon-label"><span>upload icon</span></div>
+                            <input type="file" name="icon-input" className="true-icon-input" accept="image/*" onChange={this.handleUpload} />
+                            {!!this.state.imageFile ? <img src={this.state.imageUrl} className="icon-preview"></img> : ""}
+                        </label>
                     </div>
                     <button onClick={this.handleSubmit}>create</button>
                 </form>
