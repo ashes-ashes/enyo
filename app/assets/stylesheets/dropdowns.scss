@@ -1,0 +1,55 @@
+
+@import './config-vars.scss';
+
+.settings-dropdown {
+    background-color: rgba($color: $darkest-primary, $alpha: 0.7);
+    color: $light-primary;
+    padding: 10px 0px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 3;
+    left: 60px;
+    top: 8px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 7px 14px 0px rgba(0,0,0,0.52);
+}
+
+.settings-dropdown li {
+    padding: 5px 10px;
+}
+
+.settings-dropdown li:first-child {
+    
+}
+
+.settings-dropdown li:first-of-type {
+    color: $mid-primary;
+}
+
+.settings-dropdown li:not(:first-of-type):hover {
+    background-color: $dark-secondary;
+}
+
+// .settings-dropdown::after {
+//     content: "";
+//     position: absolute;
+//     top: 20px;
+//     right: 100%;
+//     margin-top: -5px;
+//     border-width: 5px;
+//     border-style: solid;
+//     border-color: transparent rgba($color: $darkest-primary, $alpha: 0.7) transparent transparent;
+// }
+
+.dropdown-backdrop {
+    z-index: 2;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.0)
+}

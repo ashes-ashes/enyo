@@ -4,34 +4,34 @@ import NewServerFormContainer from './server_nav/server_modal/new_server_form_co
 import JoinServerFormContainer from './server_nav/server_modal/join_server_form_container';
 import PickServerFormContainer from './server_nav/server_modal/pick_server_form_container';
 
-const Modal = (props) => {
+const Popup = (props) => {
 
-    let modal;
+    let popup;
 
     switch (props.modal) {
         case "new":
-            modal = <NewServerFormContainer />;
+            popup = <NewServerFormContainer />;
             break;
         case "join":
-            modal = <JoinServerFormContainer />;
+            popup = <JoinServerFormContainer />;
             break;
         case "pick":
-            modal = <PickServerFormContainer />;
+            popup = <PickServerFormContainer />;
             break;
         default:
-            modal = "";
+            popup = "";
     };
 
-    let closeModal = () => {
+    let closePopup = () => {
         props.receiveCurrentModal("");
     }
 
     return (
-        <div className="modal">
-            {modal}
-            {!!modal ? <div className="modal-backdrop" onClick={closeModal}></div> : "" }
+        <div className="popup">
+            {popup}
+            {!!popup ? <div className="popup-backdrop" onClick={closePopup}></div> : "" }
         </div>
     );
 }
 
-export default Modal;
+export default Popup;

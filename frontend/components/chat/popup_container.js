@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 import { receiveCurrentModal } from '../../actions/ui_actions'
 
-import Modal from './modal'
+import Popup from './popup'
 
 const mapStateToProps = (state, ownProps) => ({
     modal: state.ui.currentModal
@@ -12,4 +12,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     receiveCurrentModal: (modal) => dispatch(receiveCurrentModal(modal))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default connect(mapStateToProps, mapDispatchToProps)(Popup);
