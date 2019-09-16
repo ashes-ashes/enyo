@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import ServerIndex from "./server_index"
 
 import { fetchServers } from '../../../actions/server_actions';
-import { receiveCurrentPopup } from '../../../actions/ui_actions';
+import { receiveCurrentModal } from '../../../actions/ui_actions';
 
 const mapStateToProps = (state) => ({
     servers: Object.values(state.entities.servers)
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     fetchServers: () => dispatch(fetchServers()),
-    receiveCurrentPopup: (popup) => dispatch(receiveCurrentPopup(popup))
+    receiveCurrentModal: (modal) => dispatch(receiveCurrentModal(modal))
 })
 
 export default connect(

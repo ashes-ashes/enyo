@@ -1,6 +1,6 @@
-export const RECEIVE_CURRENT_POPUP = "RECEIVE_CURRENT_POPUP"
+export const RECEIVE_CURRENT_MODAL = "RECEIVE_CURRENT_MODAL"
 
-export const receiveCurrentPopup = (popup) => ({
-    type: RECEIVE_CURRENT_POPUP,
-    popup
+export const receiveCurrentModal = (modal) => ({
+    type: RECEIVE_CURRENT_MODAL,
+    modal
 });

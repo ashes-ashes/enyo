@@ -1,15 +1,15 @@
 
 import { connect } from 'react-redux';
-import { receiveCurrentPopup } from '../../../../actions/ui_actions'
+import { receiveCurrentModal } from '../../../../actions/ui_actions'
 
 import PickServerForm from './pick_server_form'
 
 const mapStateToProps = (state, ownProps) => ({
-    popup: state.ui.currentPopup
+    modal: state.ui.currentModal
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    receiveCurrentPopup: (popup) => dispatch(receiveCurrentPopup(popup))
+    receiveCurrentModal: (modal) => dispatch(receiveCurrentModal(modal))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PickServerForm);

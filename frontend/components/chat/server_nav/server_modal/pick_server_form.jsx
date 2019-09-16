@@ -10,7 +10,7 @@ export default class PickServerForm extends React.Component {
     handleClick(type) {
         return (e) => {
             e.preventDefault();
-            this.props.receiveCurrentPopup(type);
+            this.props.receiveCurrentModal(type);
         }
     }
 

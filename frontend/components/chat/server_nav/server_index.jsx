@@ -8,7 +8,7 @@ export default class ServerIndex extends React.Component {
     constructor(props) {
         super(props);
 
-        this.setPopup = this.setPopup.bind(this);
+        this.setModal = this.setModal.bind(this);
     }
 
     componentDidMount() {
@@ -18,11 +18,11 @@ export default class ServerIndex extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.servers.length != this.props.servers.length)
-        this.props.receiveCurrentPopup();
+        this.props.receiveCurrentModal();
     }
 
-    setPopup() {
-        this.props.receiveCurrentPopup("pick")
+    setModal() {
+        this.props.receiveCurrentModal("pick")
     }
 
     render() {
@@ -33,7 +33,7 @@ export default class ServerIndex extends React.Component {
                     {this.props.servers.map((server) => {
                         return <ServerIndexItem server={server} key={server.id}/>
                     })}
-                    <li><button className="new-server-button tooltip" onClick={this.setPopup}><span className="server-placeholder">+</span>
+                    <li><button className="new-server-button tooltip" onClick={this.setModal}><span className="server-placeholder">+</span>
                     <span className="tooltip-text">Add Server</span></button>
                     </li>
                 </ul>

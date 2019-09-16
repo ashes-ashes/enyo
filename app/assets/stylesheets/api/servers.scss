@@ -66,6 +66,10 @@
 
     .server-index-item:hover, .new-server-button:hover {
         border-radius: 15px;
+
+        .server-icon {
+            border-radius: 15px;
+        }
     }
 
     .new-server-button:hover {
@@ -104,7 +108,17 @@
         border-color: transparent rgba($color: $darkest-primary, $alpha: 0.7) transparent transparent;
     }
 
-
+    .server-icon {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        transition-property: border-radius;
+        transition-duration: 0.1s;
+        transition-timing-function: linear;
+    }
 
 
 }
