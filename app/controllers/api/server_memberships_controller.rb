@@ -25,6 +25,13 @@ class Api::ServerMembershipsController < ApplicationController
     end
 
     def destroy
+        @server_membership = ServerMembership.find_by(id: params[:id])
+
+        if @server_membership.delete
+            render json: {}
+        else
+            render json: @server_membership.errors.full_messages, status: 400
+        end
 
     end
 

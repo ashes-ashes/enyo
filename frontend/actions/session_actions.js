@@ -4,6 +4,8 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
 import * as APIUtil from '../util/session_api_util';
 
+import { fetchUser } from '../util/users_api_util';
+
 
 const receiveCurrentUser = (payload) => ({
     type: RECEIVE_CURRENT_USER,
@@ -43,3 +45,13 @@ export const signup = (user) => dispatch => (
             (err) => dispatch(receiveSessionErrors(err.responseJSON))
         )
 );
+
+export const fetchCurrentUser = () => (dispatch, getState) => {
+    let state = getState();
+    let currentUserId = state.session.id;
+    return fetchUser(currentUserId)
+        .then(
+            (payload) => dispatch(receiveCurrentUser(payload)),
+            (err) => dispatch(receiveSessionErrors(err.responseJSON))
+        )
+};

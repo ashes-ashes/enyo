@@ -5,11 +5,12 @@ import { recieveCurrentModal } from '../../../../actions/ui_actions';
 import SettingsDropdown from './settings_dropdown'
 
 const mapStateToProps = (state, ownProps) => ({
-    server: ownProps.server
+    server: ownProps.server,
+    currentUserId: state.session.id
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    recieveCurrentModal: (modal) => dispatch(recieveCurrentModal(modal))
+    receiveCurrentModal: (modal) => dispatch(receiveCurrentModal(modal))
 })
 
 export default connect(
