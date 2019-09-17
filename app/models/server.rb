@@ -30,14 +30,14 @@ class Server < ApplicationRecord
         through: :memberships,
         source: :user
 
-    has_many :server_channels,
+    has_many :channel_servers,
         foreign_key: :server_id,
         class_name: "ChannelServer",
         dependent: :destroy
 
     has_many :channels,
         through: :channel_servers,
-        source: :server
+        source: :channel
 
     has_one_attached :icon
 
@@ -64,6 +64,14 @@ class Server < ApplicationRecord
             channel_id: channel.id
         })
 
+    end
+
+    def channel_ids
+        channels = self.channels
+        ids = []
+        self.channels.each do |channel|
+            ids << channel.id
+        end
     end
 
 end

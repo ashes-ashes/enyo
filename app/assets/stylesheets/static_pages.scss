@@ -66,3 +66,8 @@ input:active {
         color: rgba($color: #db6060, $alpha: 0.5)
     }
 }
+
+.chat-window {
+    display: flex;
+    flex-direction: row;
+}

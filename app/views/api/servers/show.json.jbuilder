@@ -1,8 +1,5 @@
 json.server do
     json.partial! 'server', server: @server
-    json.channel_ids do
-        @channels.keys
-    end
 end
 
 json.channels do

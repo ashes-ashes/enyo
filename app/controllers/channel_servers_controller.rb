@@ -1,2 +1,0 @@
-class ChannelServersController < ApplicationController
-end
