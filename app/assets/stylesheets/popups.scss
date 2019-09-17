@@ -45,7 +45,7 @@
 
     }
 
-    button {
+    button, input[type=submit] {
         background-color: $secondary;
         color: $lightest-primary;
         height: 50px;
@@ -54,11 +54,11 @@
         width: 180px;
     }
 
-    button:hover {
+    button:hover, input[type=submit]:hover {
         background-color: $light-secondary;
     }
 
-    button:active {
+    button:active, input[type=submit]:active {
         background-color: $dark-secondary;
     }
 
@@ -155,6 +155,10 @@
         position: absolute;
         top: 0px;
         left: 0px;
+    }
+
+    p {
+        color: $mid-primary
     }
 
 }

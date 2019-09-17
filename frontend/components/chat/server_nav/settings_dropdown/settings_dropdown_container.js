@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { recieveCurrentModal } from '../../../../actions/ui_actions';
+import { receiveCurrentModal, receiveEditId } from '../../../../actions/ui_actions';
 
 import SettingsDropdown from './settings_dropdown'
 
@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    receiveCurrentModal: (modal) => dispatch(receiveCurrentModal(modal))
+    receiveCurrentModal: (modal) => dispatch(receiveCurrentModal(modal)),
+    receiveEditId: (editId) => dispatch(receiveEditId(editId))
 })
 
 export default connect(

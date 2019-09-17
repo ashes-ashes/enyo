@@ -21,7 +21,8 @@ class ServerIndexItem extends React.Component {
         this.props.receiveCurrentModal(`server-dropdown-${this.props.server.id}`);
     }
 
-    closeDropdown() {
+    closeDropdown(e) {
+        e.stopPropagation();
         this.props.receiveCurrentModal("");
     }
 
