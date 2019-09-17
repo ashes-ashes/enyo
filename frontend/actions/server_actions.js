@@ -44,12 +44,12 @@ export const createServer = (formData) => dispatch => (
         )
 );
 
-export const updateServer = (server) => dispatch => (
-    APIUtil.updateServer(server)
+export const updateServer = (formData, serverId) => dispatch => {
+    APIUtil.updateServer(formData, serverId)
         .then(
             (server) => dispatch(receiveServer(server))
         )
-);
+};
 
 export const deleteServer = (serverId) => dispatch => (
     APIUtil.deleteServer(serverId)

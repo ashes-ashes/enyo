@@ -25,6 +25,7 @@ export default class EditServerForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
+
         let formData = new FormData();
         formData.append('server[name]', this.state.name);
 
@@ -32,7 +33,7 @@ export default class EditServerForm extends React.Component {
             formData.append('server[icon]', this.state.imageFile);
         }
 
-        this.props.updateServer(formData);
+        this.props.updateServer(formData, this.props.server.id);
     }
 
     handleUpload(e) {

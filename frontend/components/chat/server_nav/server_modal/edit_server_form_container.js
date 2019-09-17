@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    updateServer: (server) => dispatch(updateServer(server))
+    updateServer: (formData, serverId) => dispatch(updateServer(formData, serverId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditServerForm);
