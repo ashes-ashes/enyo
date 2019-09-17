@@ -13,13 +13,17 @@ const serverMembershipsReducer = (state = {}, action) => {
             })
             return newState;
         case RECEIVE_SERVER_MEMBERSHIP:
-            newState[action.serverMembership.id] = action.serverMembership
+            newState[action.payload.server_membership.id] = action.payload.server_membership
             return newState;
         case REMOVE_SERVER_MEMBERSHIP:
-            newState[action.serverMembershipId] = undefined;
+            delete newState[action.serverMembership.id];
             return newState;
         case REMOVE_SERVER:
-            delete newState[action.serverId];
+            Object.keys(newState).forEach((key) => {
+                if (newState[key].server_id === action.serverId) {
+                    delete newState[key];
+                }
+            })
             return newState;
         default:
             return state;

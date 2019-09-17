@@ -5,22 +5,26 @@ export const RECEIVE_SERVER_MEMBERSHIP = "RECEIVE_SERVER_MEMBERSHIP";
 export const REMOVE_SERVER_MEMBERSHIP = "REMOVE_SERVER_MEMBERSHIP";
 
 import { receiveFormErrors } from './error_actions';
+import { receiveCurrentModal } from './ui_actions';
 
 
-const receiveServerMembership = (serverMembership) => ({
+const receiveServerMembership = (payload) => ({
     type: RECEIVE_SERVER_MEMBERSHIP,
-    serverMembership
+    payload
 })
 
-const removeServerMembership = (serverMembershipId) => ({
+const removeServerMembership = (serverMembership) => ({
     type: REMOVE_SERVER_MEMBERSHIP,
-    serverMembershipId
+    serverMembership
 })
 
 export const createServerMembership = (inviteCode) => dispatch => (
     APIUtil.createServerMembership(inviteCode)
         .then(
-            (serverMembership) => dispatch(receiveServerMembership(serverMembership)),
+            (payload) => {
+                dispatch(receiveServerMembership(payload))
+                dispatch(receiveCurrentModal(""))
+            },
             (err) => dispatch(receiveFormErrors(err.responseJSON))
         )
 );
@@ -28,7 +32,10 @@ export const createServerMembership = (inviteCode) => dispatch => (
 export const deleteServerMembership = (serverMembershipId) => dispatch => (
     APIUtil.destroyServerMembership(serverMembershipId)
         .then(
-            () => dispatch(removeServerMembership(serverMembershipId)),
+            (serverMembership) => {
+                dispatch(removeServerMembership(serverMembership))
+                dispatch(receiveCurrentModal(""))
+            },
             (err) => dispatch(receiveFormErrors(err.responseJSON))
         )
 );
