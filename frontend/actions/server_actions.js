@@ -5,6 +5,7 @@ export const REMOVE_SERVER = "REMOVE_SERVER";
 
 import * as APIUtil from '../util/servers_api_util';
 import { receiveFormErrors } from './error_actions';
+import { receiveCurrentModal } from './ui_actions';
 
 const receiveServers = (servers) => ({
     type: RECEIVE_SERVERS,
@@ -44,16 +45,22 @@ export const createServer = (formData) => dispatch => (
         )
 );
 
-export const updateServer = (formData, serverId) => dispatch => {
+export const updateServer = (formData, serverId) => dispatch => (
     APIUtil.updateServer(formData, serverId)
         .then(
-            (server) => dispatch(receiveServer(server))
+            (server) => {
+                dispatch(receiveCurrentModal(""))
+                dispatch(receiveServer(server))
+            }
         )
-};
+);
 
 export const deleteServer = (serverId) => dispatch => (
     APIUtil.deleteServer(serverId)
         .then(
-            (serverId) => dispatch(removeServer(serverId))
+            () => {
+                dispatch(removeServer(serverId))
+                dispatch(receiveCurrentModal(""))
+            }
         )
 )

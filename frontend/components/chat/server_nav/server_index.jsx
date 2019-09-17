@@ -17,8 +17,9 @@ export default class ServerIndex extends React.Component {
 
 
     componentDidUpdate(prevProps) {
-        if (prevProps.servers.length != this.props.servers.length)
-        this.props.receiveCurrentModal();
+        if (prevProps.servers.length != this.props.servers.length) {
+            this.props.receiveCurrentModal();
+        }
     }
 
     setModal() {

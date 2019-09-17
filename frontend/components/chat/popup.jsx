@@ -5,6 +5,7 @@ import JoinServerFormContainer from './server_nav/server_modal/join_server_form_
 import PickServerFormContainer from './server_nav/server_modal/pick_server_form_container';
 import DeleteServerFormContainer from './server_nav/server_modal/delete_server_form_container';
 import EditServerFormContainer from './server_nav/server_modal/edit_server_form_container';
+import LeaveServerFormContainer from './server_nav/server_modal/leave_server_form_container';
 
 const Popup = (props) => {
 
@@ -25,6 +26,9 @@ const Popup = (props) => {
             break;
         case "editServer":
             popup = <EditServerFormContainer />;
+            break;
+        case "leaveServer":
+            popup = <LeaveServerFormContainer />;
             break;
         default:
             popup = "";

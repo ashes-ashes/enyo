@@ -9,7 +9,7 @@ export const createServerMembership = (inviteCode) => {
 
 export const destroyServerMembership = (id) => {
     return $.ajax({
-        method: "DESTROY",
+        method: "DELETE",
         url: `api/server_memberships/${id}`
     })
 }

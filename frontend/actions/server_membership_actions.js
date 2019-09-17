@@ -25,7 +25,7 @@ export const createServerMembership = (inviteCode) => dispatch => (
         )
 );
 
-export const destroyServerMembership = (serverMembershipId) => dispatch => (
+export const deleteServerMembership = (serverMembershipId) => dispatch => (
     APIUtil.destroyServerMembership(serverMembershipId)
         .then(
             () => dispatch(removeServerMembership(serverMembershipId)),
