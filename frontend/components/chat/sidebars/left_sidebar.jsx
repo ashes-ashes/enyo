@@ -19,9 +19,11 @@ class LeftSidebar extends React.Component {
             <div className="left-sidebar-container">
                 {this.props.server ? 
                 <div className="left-sidebar">
-                    <div>{this.props.server.name}</div>
+                    <div className="server-name-box">
+                        <span className="server-name">{this.props.server.name}</span>
+                    </div>
                     <ChannelIndexContainer server={this.props.server}/>
-                    <div>Placeholder</div>
+                    <div className="user-box">Placeholder</div>
                 </div> :
                 ""
                 }

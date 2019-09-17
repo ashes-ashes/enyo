@@ -4,7 +4,11 @@ class ChannelIndex extends React.Component {
 
     render() {
         return (
-            <div>placeholder</div>
+            <ul className="channel-index">
+                <li>placeholder</li>
+                <li>placeholder2</li>
+                <li>placeholder3</li>
+            </ul>
         )
     }
 }

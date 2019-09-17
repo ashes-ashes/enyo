@@ -7,5 +7,47 @@
 .left-sidebar-container {
     height: 100vh;
     background-color: $dark-primary;
-    width: 200px;
+    width: 225px;
 }
+
+.left-sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.server-name-box {
+    height: 50px;
+    border-bottom: 2px solid $darker-primary;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.server-name {
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.channel-index {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.channel-index li {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.channel-index li:hover {
+    background-color: rgba($color: #FFFFFF, $alpha: 0.02)
+}
+
+.user-box {
+    margin-top: auto;
+    height: 50px;
+    background-color: $darke-primary;
+}
+

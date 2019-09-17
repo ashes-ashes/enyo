@@ -2,7 +2,7 @@
 @import './config-vars.scss';
 
 .settings-dropdown {
-    background-color: rgba($color: $darkest-primary, $alpha: 0.7);
+    background-color: $darkest-primary;
     color: $light-primary;
     padding: 10px 0px;
     border-radius: 4px;
