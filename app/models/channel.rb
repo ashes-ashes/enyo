@@ -4,7 +4,6 @@
 #
 #  id          :bigint           not null, primary key
 #  name        :string           not null
-#  server_id   :integer          not null
 #  private     :boolean          default(FALSE), not null
 #  description :string
 #  created_at  :datetime         not null
@@ -12,4 +11,23 @@
 #
 
 class Channel < ApplicationRecord
+
+    has_many :memberships,
+        foreign_key: :channel_id,
+        class_name: "ChannelMembership",
+        dependent: :destroy
+
+    has_many :members,
+        through: :memberships,
+        source: :user
+
+    has_many :channel_servers,
+        foreign_key: :channel_id,
+        class_name: "ChannelServer",
+        dependent: :destroy
+
+    has_many :servers,
+        through: :channel_servers,
+        source: :server
+
 end

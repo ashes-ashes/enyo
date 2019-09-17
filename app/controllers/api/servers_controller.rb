@@ -10,6 +10,7 @@ class Api::ServersController < ApplicationController
 
     def show
         @server = Server.find_by(id: params[:id])
+        @channels = @server.channels
         render :show
     end
 
@@ -26,6 +27,7 @@ class Api::ServersController < ApplicationController
                 user_id: current_user.id,
                 server_id: @server.id
             })
+
             render :show
         else 
             render json: @server.errors.full_messages, status: 422

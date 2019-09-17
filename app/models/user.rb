@@ -37,7 +37,20 @@ class User < ApplicationRecord
     through: :server_memberships,
     source: :server
 
+    has_many :channel_memberships,
+    foreign_key: :user_id,
+    class_name: "ChannelMembership",
+    dependent: :destroy
+
+    has_many :channels,
+    through: :channel_memberships,
+    source: :channel
+
     has_one_attached :avatar
+
+    def nickname(server_id)
+        self.server_memberships.find_by(server_id: server_id).nickname
+    end
     
     def password=(password)
         @password = password

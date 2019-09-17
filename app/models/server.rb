@@ -15,6 +15,8 @@ class Server < ApplicationRecord
 
     after_initialize :ensure_invite_code
 
+    after_create :server_setup
+
     belongs_to :owner,
         foreign_key: :owner_id,
         class_name: "User"
@@ -28,6 +30,15 @@ class Server < ApplicationRecord
         through: :memberships,
         source: :user
 
+    has_many :server_channels,
+        foreign_key: :server_id,
+        class_name: "ChannelServer",
+        dependent: :destroy
+
+    has_many :channels,
+        through: :channel_servers,
+        source: :server
+
     has_one_attached :icon
 
     def ensure_invite_code
@@ -40,6 +51,19 @@ class Server < ApplicationRecord
             code = SecureRandom.urlsafe_base64(10)
         end
         self.invite_code = code
+    end
+
+    def server_setup
+
+        channel = Channel.create({
+            name: "general"
+        })
+
+        ChannelServer.create({
+            server_id: self.id,
+            channel_id: channel.id
+        })
+
     end
 
 end

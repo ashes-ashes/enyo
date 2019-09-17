@@ -33,14 +33,14 @@ export const fetchServers = () => dispatch => (
 export const fetchServer = (serverId) => dispatch => (
     APIUtil.fetchServer(serverId)
         .then(
-            (server) => dispatch(receiveServer(server)),
+            (payload) => dispatch(receiveServer(payload)),
         )
 );
 
 export const createServer = (formData) => dispatch => (
     APIUtil.createServer(formData)
         .then(
-            (server) => dispatch(receiveServer(server)),
+            (payload) => dispatch(receiveServer(payload)),
             (err) => dispatch(receiveFormErrors(err))
         )
 );
@@ -48,9 +48,9 @@ export const createServer = (formData) => dispatch => (
 export const updateServer = (formData, serverId) => dispatch => (
     APIUtil.updateServer(formData, serverId)
         .then(
-            (server) => {
+            (payload) => {
                 dispatch(receiveCurrentModal(""))
-                dispatch(receiveServer(server))
+                dispatch(receiveServer(payload))
             }
         )
 );
