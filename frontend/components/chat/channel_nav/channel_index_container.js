@@ -7,7 +7,7 @@ import { receiveCurrentModal } from '../../../actions/ui_actions';
 const mapStateToProps = (state, ownProps) => ({
     server: ownProps.server,
     channels: ownProps.server.channel_ids.map((channel_id) => {
-        state.entities.channels[channel_id]
+        return state.entities.channels[channel_id]
     })
 })
 

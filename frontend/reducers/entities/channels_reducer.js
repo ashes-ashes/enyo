@@ -10,7 +10,10 @@ const serversReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_SERVER:
-            newState = action.payload.channels;
+            console.log(action.payload.channels)
+            Object.keys(action.payload.channels).forEach((id) =>
+                newState[id] = action.payload.channels[id]
+            );
             return newState;
         case REMOVE_SERVER:
             delete newState[action.serverId];

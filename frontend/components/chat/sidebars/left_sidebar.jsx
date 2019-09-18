@@ -12,9 +12,9 @@ class LeftSidebar extends React.Component {
         this.props.fetchServer();
     }
 
+
     render() {
 
-        console.log(this.props);
         return (
             <div className="left-sidebar-container">
                 {this.props.server ? 

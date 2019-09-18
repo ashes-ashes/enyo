@@ -72,6 +72,7 @@ class Server < ApplicationRecord
         self.channels.each do |channel|
             ids << channel.id
         end
+        return ids
     end
 
 end
