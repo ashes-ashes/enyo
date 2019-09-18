@@ -12,9 +12,8 @@ class LeftSidebar extends React.Component {
         this.props.fetchServer();
     }
 
-
     render() {
-
+ 
         return (
             <div className="left-sidebar-container">
                 {this.props.server ? 
@@ -22,7 +21,7 @@ class LeftSidebar extends React.Component {
                     <div className="server-name-box">
                         <span className="server-name">{this.props.server.name}</span>
                     </div>
-                    <ChannelIndexContainer server={this.props.server}/>
+                    <ChannelIndexContainer serverId={this.props.server.id} server={this.props.server}/>
                     <div className="user-box">Placeholder</div>
                 </div> :
                 ""

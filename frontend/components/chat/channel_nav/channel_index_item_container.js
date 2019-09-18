@@ -5,7 +5,8 @@ import { receiveCurrentModal } from '../../../actions/ui_actions';
 
 const mapStateToProps = (state, ownProps) => ({
     channel: ownProps.channel,
-    modal: state.ui.currentModal
+    modal: state.ui.currentModal,
+    key: ownProps.key
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

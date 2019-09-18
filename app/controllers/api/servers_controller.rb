@@ -11,6 +11,7 @@ class Api::ServersController < ApplicationController
     def show
         @server = Server.find_by(id: params[:id])
         @channels = @server.channels
+        @channel_servers = @server.channel_servers
 
         render :show
     end
@@ -28,6 +29,9 @@ class Api::ServersController < ApplicationController
                 user_id: current_user.id,
                 server_id: @server.id
             })
+
+            @channels = @server.channels
+            @channel_servers = @server.channel_servers
 
             render :show
         else 

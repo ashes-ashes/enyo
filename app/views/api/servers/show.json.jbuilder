@@ -9,3 +9,11 @@ json.channels do
         end
     end
 end
+
+json.channel_servers do
+    @channel_servers.each do |channel_server|
+        json.set! channel_server.id do
+            json.partial! "/api/channel_servers/channel_server", channel_server: channel_server
+        end
+    end
+end

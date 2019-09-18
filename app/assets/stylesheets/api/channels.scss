@@ -34,6 +34,7 @@
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
+    color: $mid-primary
 }
 
 .channel-index li {
@@ -42,10 +43,15 @@
     box-sizing: border-box;
     border-radius: 5px;
     margin: 0px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
 }
 
 .channel-index li:hover {
-    background-color: rgba($color: #FFFFFF, $alpha: 0.03)
+    background-color: rgba($color: #FFFFFF, $alpha: 0.03);
+    color: $light-primary;
 }
 
 .user-box {
@@ -54,3 +60,30 @@
     background-color: $darke-primary;
 }
 
+.channel-index li i {
+    margin-right: 5px;
+}
+
+.hash-icon {
+    margin-right: 5px;
+    font-size: 20px;
+    // font-weight: bold;
+}
+
+.add-channel-form-container {
+
+    form {
+        display: flex;
+        flex-direction: row;
+    }
+
+    input {
+        background-color: transparent;
+        border-bottom: 1px dashed $mid-primary;
+    }
+
+}
+
+.add-channel-icon {
+        transform: rotateY(180deg);
+}
