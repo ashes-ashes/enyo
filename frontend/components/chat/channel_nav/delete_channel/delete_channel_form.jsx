@@ -1,4 +1,5 @@
 import React from 'react';
+import { receiveCurrentModal } from '../../../../actions/ui_actions';
 
 class DeleteChannelForm extends React.Component {
 
@@ -24,7 +25,7 @@ class DeleteChannelForm extends React.Component {
                         </i><span>{error}</span></li>) :
                         ""}
                 </ul>
-                <button onClick={this.handleSubmit}>Delete {this.props.channel.name}</button>
+                <button onClick={this.handleSubmit}>{this.props.channel ? `Delete ${this.props.channel.name}` : "Deleted."}</button>
             </div>
         )
     }

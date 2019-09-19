@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ChannelIndexContainer from '../channel_nav/channel_index_container'
+import UserBarContainer from './user_bar/user_bar_container'
 
 class LeftSidebar extends React.Component {
 
@@ -22,7 +23,7 @@ class LeftSidebar extends React.Component {
                         <span className="server-name">{this.props.server.name}</span>
                     </div>
                     <ChannelIndexContainer serverId={this.props.server.id} server={this.props.server}/>
-                    <div className="user-box">Placeholder</div>
+                    <UserBarContainer />
                 </div> :
                 ""
                 }

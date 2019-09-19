@@ -1,3 +1,45 @@
 // Place all the styles related to the api/Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import './config-vars.scss';
+
+.left-sidebar .user-bar {
+    color: $light-primary;
+    margin-top: auto;
+    height: 50px;
+    background-color: $darke-primary;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.left-sidebar div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-bar i {
+    margin: 5px;
+}
+
+.user-bar .user-name {
+    font-weight: bold;
+}
+
+.user-bar .settings-icon {
+    color: $primary;
+}
+
+.user-bar .settings-icon:hover {
+    color: $mid-primary;
+}
+
+.user-bar .settings-icon:active {
+    color: $lightest-primary;
+}
+

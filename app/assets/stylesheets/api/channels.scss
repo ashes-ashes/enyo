@@ -39,7 +39,7 @@
 
 .channel-index li a, .channel-index .add-channel-form-container, .add-channel-button {
     width: 215px;
-    padding: 10px;
+    padding: 5px 10px;
     box-sizing: border-box;
     border-radius: 5px;
     margin: 0px 5px;
@@ -49,6 +49,16 @@
     align-items: center;
     font-size: 14px;
     position: relative;
+}
+
+.add-channel {
+    margin-top: 10px;
+    transition-property: margin-top, ;
+    transition-duration: .3s;
+}
+
+.add-channel:focus-within {
+    margin-top: 0px;
 }
 
 .channel-index li a.active {
@@ -103,12 +113,6 @@
 .channel-index .add-channel-button {
     justify-content: flex-start;
     color: rgba($color: $mid-primary, $alpha: 0.5);
-}
-
-.user-box {
-    margin-top: auto;
-    height: 50px;
-    background-color: $darke-primary;
 }
 
 .channel-index li .chat-icon {

@@ -36,6 +36,7 @@
     h2 {
         color: $light-secondary;
         text-align: center;
+        text-transform: lowercase;
     }
 
     .pick-server-button-container {
@@ -53,6 +54,7 @@
         margin: 0px 10px;
         border-radius: 3px;
         width: 180px;
+        text-transform: lowercase;
     }
 
     button:hover, input[type=submit]:hover {

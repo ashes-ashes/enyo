@@ -36,10 +36,10 @@ class ChannelIndex extends React.Component {
         if (this.props.modal === "addChannel") {
             addChannel = <AddChannelFormContainer serverId={this.props.server.id} />
         } else {
-            addChannel = <li className="add-channel-button" onClick={this.handleClick}>
+            addChannel = <div className="add-channel-button" onClick={this.handleClick}>
                 <i className="material-icons add-channel-icon">add_comment</i>
                 <span>Add Channel</span>
-            </li>
+            </div>
         };
 
         return (
@@ -50,7 +50,7 @@ class ChannelIndex extends React.Component {
                     )) :
                     ""}
                     {this.props.currentUserId === this.props.server.owner_id ? 
-                        addChannel :
+                        <li className="add-channel">{addChannel}</li> :
                         ""
                     }
             </ul>

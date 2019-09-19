@@ -33,12 +33,12 @@ class AddChannelForm extends React.Component {
 
 
         return(
-            <li className="add-channel-form-container">
+            <div className="add-channel-form-container">
                 <form className="add-channel-form" onSubmit={this.handleSubmit}>
                     <i className="material-icons add-channel-icon">add_comment</i>
                     <input autoFocus type="text" value={this.state.name} onChange={this.handleChange} onBlur={this.handleBlur} />
                 </form>
-            </li>
+            </div>
         );
     }
 };
