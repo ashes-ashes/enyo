@@ -18,7 +18,10 @@ class ChannelIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.channels.length != prevProps.channels.length) {
+        if ( this.props.channels.length === 0 ) {
+            this.props.fetchServer();
+        }
+        else if (this.props.channels.length != prevProps.channels.length) {
             this.props.receiveCurrentModal();
         }
     }
@@ -27,19 +30,28 @@ class ChannelIndex extends React.Component {
         if (this.props.channels === null) {
             return null;
         };
+
+        let addChannel;
+
+        if (this.props.modal === "addChannel") {
+            addChannel = <AddChannelFormContainer serverId={this.props.server.id} />
+        } else {
+            addChannel = <li className="add-channel-button" onClick={this.handleClick}>
+                <i className="material-icons add-channel-icon">add_comment</i>
+                <span>Add Channel</span>
+            </li>
+        };
+
         return (
             <ul className="channel-index">
                     {this.props.channels[0] ?
                     this.props.channels.map((channel) => (
-                        <ChannelIndexItemContainer channel={channel} key={channel.id}/>
+                        <ChannelIndexItemContainer server={this.props.server} channel={channel} key={channel.id}/>
                     )) :
                     ""}
-                    {this.props.modal === "addChannel" ? 
-                        <AddChannelFormContainer serverId={this.props.server.id} /> :
-                    <li onClick={this.handleClick}>
-                        <i className="material-icons add-channel-icon">add_comment</i>
-                        <span>Add Channel</span>
-                    </li>
+                    {this.props.currentUserId === this.props.server.owner_id ? 
+                        addChannel :
+                        ""
                     }
             </ul>
         )

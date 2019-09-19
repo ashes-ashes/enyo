@@ -37,7 +37,6 @@ class ServerIndexItem extends React.Component {
                     <div className="dropdown-backdrop" onClick={this.closeDropdown}></div>
                     <SettingsDropdownContainer server={this.props.server}/> 
                 </div>
-                
                 : 
                 <span className="tooltip-text">{this.props.server.name}</span>}
             </li>

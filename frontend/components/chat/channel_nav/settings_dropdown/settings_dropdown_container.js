@@ -5,7 +5,7 @@ import { receiveCurrentModal, receiveEditId } from '../../../../actions/ui_actio
 import SettingsDropdown from './settings_dropdown'
 
 const mapStateToProps = (state, ownProps) => ({
-    server: ownProps.server,
+    serverOwnerId: state.entities.servers[ownProps.serverId].owner_id,
     currentUserId: state.session.id
 })
 

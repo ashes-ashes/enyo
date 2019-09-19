@@ -5,14 +5,15 @@ import { fetchServer } from '../../../actions/server_actions';
 import { receiveCurrentModal } from '../../../actions/ui_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-    serverId: state.entities.servers[ownProps.serverId],
+    server: state.entities.servers[ownProps.serverId],
     channels: 
         Object.values(state.entities.channelServers).filter((channelServer) =>
             channelServer.server_id === ownProps.serverId
         ).map((channelServer) =>
             state.entities.channels[channelServer.channel_id]
         ),
-    modal: state.ui.currentModal
+    modal: state.ui.currentModal,
+    currentUserId: state.session.id
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

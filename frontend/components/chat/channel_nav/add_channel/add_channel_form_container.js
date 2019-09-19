@@ -6,7 +6,8 @@ import { receiveCurrentModal } from '../../../../actions/ui_actions';
 import AddChannelForm from './add_channel_form'
 
 const mapStateToProps = (state, ownProps) => ({
-    serverId: ownProps.serverId
+    serverId: ownProps.serverId,
+    modal: state.ui.currentModal
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
