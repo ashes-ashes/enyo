@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import MessageForm from './message-form';
+import MessageForm from './message_form';
 
 const mapStateToProps = (state) => ({
 

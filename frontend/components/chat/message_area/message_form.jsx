@@ -6,7 +6,7 @@ class MessageForm extends React.Component {
     render() {
         return (
             <div className="message-form-container">
-                <form class="message-form">
+                <form className="message-form">
                     <input type="text"></input>
                 </form>
             </div>
