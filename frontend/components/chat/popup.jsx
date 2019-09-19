@@ -6,6 +6,7 @@ import PickServerFormContainer from './server_nav/server_modal/pick_server_form_
 import DeleteServerFormContainer from './server_nav/server_modal/delete_server_form_container';
 import EditServerFormContainer from './server_nav/server_modal/edit_server_form_container';
 import LeaveServerFormContainer from './server_nav/server_modal/leave_server_form_container';
+import DeleteChannelFormContainer from './channel_nav/delete_channel/delete_channel_form_container';
 
 const Popup = (props) => {
 
@@ -29,6 +30,9 @@ const Popup = (props) => {
             break;
         case "leaveServer":
             popup = <LeaveServerFormContainer />;
+            break;
+        case "deleteChannel":
+            popup = <DeleteChannelFormContainer />;
             break;
         default:
             popup = "";

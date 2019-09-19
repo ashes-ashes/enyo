@@ -15,8 +15,10 @@
         height: 100vh;
     }
 
-    .server-index-item, .new-server-button {
-        display: block;
+    .server-index-item a, .new-server-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 50px;
         height: 50px;
         background-color: $primary;
@@ -27,16 +29,15 @@
         transition-timing-function: linear;
         position: relative;
 
-
         .server-placeholder {
             font-size: 30px;
             color: $secondary;
             text-align: center;
-            margin-top: 10px;
         }
     }
 
-    .server-index-item::before,
+
+    .server-index-item a::before,
     .new-server-button::before {
         content: "";
         visibility: hidden;
@@ -52,11 +53,17 @@
         transition-duration: 0.3s;
     }
 
-    .server-index-item:hover::before, 
+    .server-index-item a:hover::before, 
     .new-server-button:hover::before {
         visibility: visible;
         top: 15px;
         height: 20px;
+    }
+
+    .server-index-item a.active::before {
+        visibility: visible;
+        top: 5px;
+        height: 40px;
     }
 
 
@@ -64,7 +71,15 @@
         color: $light-secondary;
     }
 
-    .server-index-item:hover, .new-server-button:hover {
+    .server-index-item a:hover, .new-server-button:hover {
+        border-radius: 15px;
+
+        .server-icon {
+            border-radius: 15px;
+        }
+    }
+
+    .server-index-item a.active {
         border-radius: 15px;
 
         .server-icon {

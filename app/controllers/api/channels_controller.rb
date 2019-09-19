@@ -8,17 +8,26 @@ class Api::ChannelsController < ApplicationController
 
         if @channel.save
             
-            channel_server = ChannelServer.create({
+            ChannelServer.create({
                 channel_id: @channel.id,
                 server_id: params[:server_id]
             })
 
-            @channel_servers = {}
-            @channel_servers[channel_server.id] = channel_server
-
             render :show
         else 
             render json: @server.errors.full_messages, status: 422
+        end
+
+    end
+
+    def destroy
+
+        @channel = Channel.find(params[:id])
+
+        if @channel.destroy
+            render json: {}
+        else
+            render @channel.errors.full_messages, status: 400
         end
 
     end

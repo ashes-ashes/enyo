@@ -37,7 +37,7 @@
     color: $mid-primary
 }
 
-.channel-index li {
+.channel-index li a, .channel-index .add-channel-form-container, .add-channel-button {
     width: 215px;
     padding: 10px;
     box-sizing: border-box;
@@ -50,6 +50,11 @@
     font-size: 14px;
     position: relative;
 }
+
+.channel-index li a.active {
+    color: $lightest-primary;
+}
+
 
 .chat-icon, .add-channel-icon {
     font-size: 20px;
@@ -64,11 +69,12 @@
     }
 }
 
+
 .channel-index .add-channel-form-container {
     justify-content: flex-start
 }
 
-.channel-index li:hover {
+.channel-index li a:hover, .add-channel-form-container:hover, .add-channel-button:hover {
     background-color: rgba($color: #FFFFFF, $alpha: 0.03);
     color: $light-primary;
 
@@ -77,7 +83,12 @@
     }
 }
 
-.channel-index li:active {
+.channel-index li a:active {
+    color: $lightest-primary;
+    background-color: $primary;
+}
+
+.channel-index .add-channel-button:active {
     color: $lightest-primary;
 }
 

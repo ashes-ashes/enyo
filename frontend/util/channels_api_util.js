@@ -1,8 +1,8 @@
-export const createChannel = (name, channelId) => {
+export const createChannel = (name, serverId) => {
     return $.ajax({
         method: "POST",
         url: `api/channels`,
-        data: {name: name, channel_id: channelId},
+        data: {name: name, server_id: serverId},
     })
 };
 

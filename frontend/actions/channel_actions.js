@@ -23,10 +23,10 @@ export const createChannel = (name, serverId) => dispatch => (
         )
 );
 
-export const removeChannel = (channelId) => dispatch => (
-    APIUtil.removeChannel(channelId)
+export const deleteChannel = (channelId) => dispatch => (
+    APIUtil.deleteChannel(channelId)
         .then(
-            (channelId) => dispatch(removeChannel(channelId)),
+            () => dispatch(removeChannel(channelId)),
             (err) => dispatch(receiveFormErrors(err))
         )
 )

@@ -8,7 +8,8 @@ import DeleteChannelForm from './delete_channel_form'
 
 const mapStateToProps = (state, ownProps) => ({
     modal: state.ui.currentModal,
-    channelId: state.entities.editId,
+    channelId: state.ui.editId,
+    channel: state.entities.channels[state.ui.editId],
     errors: state.errors.form
 });
 
