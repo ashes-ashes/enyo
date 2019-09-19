@@ -1,0 +1,44 @@
+@import './config-vars.scss';
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    height: 50px;
+    border-bottom: 2px solid $dark-primary;
+
+    .channel-name-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        margin: 10px;
+
+        font-weight: bold;
+
+        i {
+            margin: 5px;
+        }
+    }
+}
+
+.channel-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+.message-area {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+}

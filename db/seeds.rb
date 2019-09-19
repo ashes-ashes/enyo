@@ -24,6 +24,24 @@ User.create(
     password: 'psychopomp'
 )
 
+User.create(
+    username: 'Hera',
+    email: 'hera@olympus.io',
+    password: 'antiio'
+)
+
+User.create(
+    username: 'Apollo',
+    email: 'apollo@olympus.io',
+    password: 'igotthecow'
+)
+
+User.create(
+    username: 'Artemis',
+    email: 'artemis@olympus.io',
+    password: 'ishotthestag'
+)
+
 
 Server.create(
     name: "Olympus",
@@ -35,7 +53,12 @@ Server.create(
     owner_id: 2
 )
 
-3.times do |i|
+Server.create(
+    name: "crossroads",
+    owner_id: 3
+)
+
+6.times do |i|
     ServerMembership.create(
         server_id: 1,
         user_id: i+1
