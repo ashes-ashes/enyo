@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MessageFormContainer from '../message_area/messsage_form_container';
+import MessageFormContainer from '../message_area/message_form_container';
 
 class Main extends React.Component {
 
@@ -18,7 +18,7 @@ class Main extends React.Component {
                     <div className="channel-display">
                         <div className="message-area">
                             <div>message index placeholder</div>
-                            <MessageFormContainer />
+                            <MessageFormContainer channelId={this.props.match.params.channelId} serverId={this.props.match.params.serverId}/>
                         </div>
                         <div className="users-index-container">users bar placeholder</div>
                     </div>
