@@ -2,12 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import '../config-vars.scss';
 
 .message-index {
     width: 100%;
     padding: 10px;
     overflow: scroll;
     box-sizing: border-box;
+    color: $light-primary
 }
 
 .message-index li {
@@ -22,4 +24,16 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: baseline
+}
+
+.message .time-sent {
+    color: $mid-primary;
+    font-size: 12px;
+}
+
+.message-body {
+    display: block;
+    margin-top: 5px;
+    overflow-wrap: break-word;
 }
