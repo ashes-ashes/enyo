@@ -7,6 +7,7 @@
     width: 100%;
     padding: 10px;
     overflow: scroll;
+    box-sizing: border-box;
 }
 
 .message-index li {
@@ -15,4 +16,10 @@
 
 .nick {
     font-weight: bold;
+}
+
+.message div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

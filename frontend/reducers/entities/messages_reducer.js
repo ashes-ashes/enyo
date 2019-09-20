@@ -9,7 +9,8 @@ const messagesReducer = (state = {}, action) => {
         case RECEIVE_CHANNEL:
             return Object.assign({}, newState, action.payload.messages);
         case RECEIVE_MESSAGE:
-            newState[Object.keys(action.payload.messages)[0]] = action.payload.message;
+            let message = Object.values(action.payload.messages)[0]
+            newState[message.id] = message
             return newState;
         default:
             return state;
