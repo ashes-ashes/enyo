@@ -28,6 +28,12 @@ class Listener extends React.Component {
                 enyochan: id
             },
             {
+                connected: () => {
+                    console.log(`Connected!! to ${id}`);
+                },
+                disconnected: () => {
+                    console.log(`Disconnected!! from ${id}`);
+                },
                 received: data => {
                     let payload = {
                         messages: {

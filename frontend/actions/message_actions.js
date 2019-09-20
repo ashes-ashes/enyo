@@ -10,8 +10,4 @@ export const receiveMessage = (payload) => ({
 
 export const createMessage = (message) => dispatch => (
     APIUtil.createMessage(message)
-        .then(
-            (payload) => dispatch(receiveMessage(payload)),
-            (err) => dispatch(receiveFormErrors(err))
-        )
 );
