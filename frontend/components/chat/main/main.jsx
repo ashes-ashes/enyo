@@ -25,7 +25,7 @@ class Main extends React.Component {
                             <MessageIndexContainer channelId={this.props.match.params.channelId}/>
                             <MessageFormContainer channelId={this.props.match.params.channelId} serverId={this.props.match.params.serverId}/>
                         </div>
-                        <div className="users-index-container">users bar placeholder</div>
+                        <div className="users-index-container"></div>
                     </div>
                 </div>
             )
