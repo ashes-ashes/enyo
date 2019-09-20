@@ -21,10 +21,12 @@ class MessageForm extends React.Component {
         e.preventDefault();
     
         this.props.createMessage({
+            message: {
             nick: this.props.nick,
             body: this.state.body,
-            channelId: this.props.channelId,
-            authorId: this.props.currentUserId       
+            channel_id: this.props.channelId,
+            author_id: this.props.currentUserId  
+            }     
         });
         this.setState({body: ""});
     }
@@ -32,7 +34,7 @@ class MessageForm extends React.Component {
     render() {
         return (
             <div className="message-form-container">
-                <form className="message-form">
+                <form className="message-form" onSubmit={this.handleSubmit}>
                     <input type="text" value={this.state.body} onChange={this.handleChange}></input>
                 </form>
             </div>

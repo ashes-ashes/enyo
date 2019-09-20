@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 
 import MessageIndex from './message_index';
 
+import { fetchChannel } from '../../../actions/channel_actions';
+
 const mapStateToProps = (state, ownProps) => ({
     messages: Object.values(state.entities.messages).filter((message) => 
         message.channel_id == ownProps.channelId
@@ -9,8 +11,8 @@ const mapStateToProps = (state, ownProps) => ({
     users: state.entities.users
 })
 
-const mapDispatchToProps = (dispatch) => ({
-    
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    fetchChannel: () => dispatch(fetchChannel(ownProps.channelId))
 })
 
 export default connect(

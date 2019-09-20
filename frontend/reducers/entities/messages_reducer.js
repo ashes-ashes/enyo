@@ -7,7 +7,7 @@ const messagesReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_CHANNEL:
-            return Object.assign(newState, action.payload.messages)
+            return Object.assign({}, newState, action.payload.messages);
         case RECEIVE_MESSAGE:
             newState[action.payload.message.id] = action.payload.message;
             return newState;

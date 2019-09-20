@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => ({
     currentUserId: state.session.id,
     nick: Object.values(state.entities.serverMemberships).find((server_membership) => 
         server_membership.server_id == ownProps.serverId
-    ).nickname
+    ).nickname || null
 });
 
 

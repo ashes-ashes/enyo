@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 
+// import { fetchChannel } from '../../../actions/channel_actions';
 
 import Main from './main'
 

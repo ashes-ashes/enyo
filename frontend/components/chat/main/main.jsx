@@ -5,6 +5,9 @@ import MessageIndexContainer from '../message_area/message_index_container';
 
 class Main extends React.Component {
 
+    componentDidMount() {
+    }
+
 
     render() {
 

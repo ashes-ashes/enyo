@@ -15,6 +15,14 @@ const removeChannel = (channelId) => ({
     channelId
 })
 
+export const fetchChannel = (channelId) => dispatch => (
+    APIUtil.fetchChannel(channelId)
+        .then(
+            (payload) => dispatch(receiveChannel(payload)),
+            (err) => dispatch(receiveFormErrors(err))
+        )
+)
+
 export const createChannel = (name, serverId) => dispatch => (
     APIUtil.createChannel(name, serverId)
         .then(
