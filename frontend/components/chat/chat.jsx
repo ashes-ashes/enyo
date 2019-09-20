@@ -6,6 +6,8 @@ import LeftSidebarContainer from './sidebars/left_sidebar_container';
 import PopupContainer from './popup_container';
 import MainContainer from './main/main_container';
 
+// import ListenerContainer from './message_area/listener/listener_container';
+
 class Chat extends React.Component {
 
     componentDidMount() {
@@ -22,7 +24,7 @@ class Chat extends React.Component {
                     <Route path="/servers/:serverId/channels/:channelId" component={MainContainer} />
                 </div>
                 <PopupContainer />
-                <Route path="/servers/:serverId/channels/:channelId" component={ListenerContainer} />
+                {/* <Route path="/servers/:serverId/channels/:channelId" component={ListenerContainer} /> */}
             </div>
         );
     }
