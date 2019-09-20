@@ -1,11 +1,13 @@
 import React from 'react';
 
 import MessageFormContainer from '../message_area/message_form_container';
+import MessageIndexContainer from '../message_area/message_index_container';
 
 class Main extends React.Component {
 
 
     render() {
+
         if (this.props.channel) {
             return (
                 <div className="main">
@@ -17,7 +19,7 @@ class Main extends React.Component {
                     </div>
                     <div className="channel-display">
                         <div className="message-area">
-                            <div>message index placeholder</div>
+                            <MessageIndexContainer channelId={this.props.match.params.channelId}/>
                             <MessageFormContainer channelId={this.props.match.params.channelId} serverId={this.props.match.params.serverId}/>
                         </div>
                         <div className="users-index-container">users bar placeholder</div>

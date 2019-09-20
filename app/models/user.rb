@@ -46,6 +46,10 @@ class User < ApplicationRecord
     through: :channel_memberships,
     source: :channel
 
+    has_many :messages,
+    foreign_key: :author_id,
+    class_name: 'Message'
+
     has_one_attached :avatar
 
     def nickname(server_id)

@@ -1,5 +1,13 @@
 class Api::ChannelsController < ApplicationController
 
+    def show
+        @channel = Channel.find_by(id: params[:id])
+        @messages = @channel.messages
+
+        render :show
+
+    end
+
     def create
         
         @channel = Channel.new(

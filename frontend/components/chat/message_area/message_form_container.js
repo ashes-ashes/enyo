@@ -6,9 +6,9 @@ import { createMessage } from '../../../actions/message_actions';
 
 const mapStateToProps = (state, ownProps) => ({
     currentUserId: state.session.id,
-    nick: Object.values(state.entities.server_memberships).find((server_membership) => {
-        server_membership.user_id === state.session.id && server_membership.server_id === ownProps.channelId
-    }).nickname
+    nick: Object.values(state.entities.serverMemberships).find((server_membership) => 
+        server_membership.server_id == ownProps.serverId
+    ).nickname
 });
 
 

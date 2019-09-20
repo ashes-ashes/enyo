@@ -22,6 +22,7 @@ class Chat extends React.Component {
                     <Route path="/servers/:serverId/channels/:channelId" component={MainContainer} />
                 </div>
                 <PopupContainer />
+                <Route path="/servers/:serverId/channels/:channelId" component={ListenerContainer} />
             </div>
         );
     }

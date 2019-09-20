@@ -8,6 +8,7 @@
 #  channel_id :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  nick       :string
 #
 
 require 'test_helper'
