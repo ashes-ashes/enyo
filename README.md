@@ -9,6 +9,12 @@
 
 enyo servers can be created and then shared with friends via an invite code. Their owners can edit or delete them, and create new **channels** within them.
 
+# Channels
+
+![An example of adding new channels.](https://i.ibb.co/41JPM2v/Screen-Recording-2019-09-20-at-3-31-02-PM-mov.gif)
+
+The owner of an enyo server can add separate channels in which users can message.
+
 # Live Chat
 
 ![An example of live messaging (solo).](https://i.ibb.co/vB2FdqN/Screen-Recording-2019-09-20-at-2-32-20-PM-mov.gif)
