@@ -4,6 +4,10 @@
 
 @import '../config-vars.scss';
 
+.message {
+    margin-left: 40px;
+}
+
 .message-index {
     width: 100%;
     padding: 10px;
@@ -20,10 +24,10 @@
     font-weight: bold;
 }
 
-.message div {
+.message .message-info {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: left;
     align-items: baseline
 }
 
@@ -36,4 +40,15 @@
     display: block;
     margin-top: 5px;
     overflow-wrap: break-word;
+}
+
+.message .user {
+
+    position: relative;
+    margin-right: 10px;
+
+    .avatar {
+        position: absolute;
+        left: -50px;
+    }
 }

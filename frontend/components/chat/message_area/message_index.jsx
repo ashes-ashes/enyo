@@ -19,7 +19,7 @@ class MessageIndex extends React.Component {
         return (
             <ul className="message-index">
                 {this.props.messages.map((message) => 
-                    <MessageContainer key={message.id} username={this.props.users[message.author_id].username} message={message}/>
+                    <MessageContainer key={message.id} user={this.props.users[message.author_id]} message={message}/>
                 )}
             </ul>
         )

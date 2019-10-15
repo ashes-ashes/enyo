@@ -27,10 +27,6 @@
     margin: 5px;
 }
 
-.user-bar .user-name {
-    font-weight: bold;
-}
-
 .user-bar .settings-icon {
     color: $primary;
 }
@@ -46,4 +42,30 @@
 .users-index-container {
     width: 250px;
     background-color: $dark-primary;
+}
+
+.user-bar .user {
+    font-size: 14px;
+    .avatar {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+.user {
+
+    display: flex;
+    align-items: center;
+
+    .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        margin: 5px;
+    }
+
+    .username {
+        font-weight: bold;
+    }
 }
