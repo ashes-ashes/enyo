@@ -7,7 +7,6 @@ class Message extends React.Component {
     render() {
         return (
             <li key = { this.props.message.id } className="message">
-                <img></img>
                 <div className="message-info">
                     <UserContainer user={this.props.user} nick={this.props.message.nick}/>
                     <span className="time-sent">{this.props.message.created_at.match(/\d\d:\d\d/)}</span>

@@ -6,6 +6,7 @@
 
 .message {
     margin-left: 40px;
+    margin-top: 10px;
 }
 
 .message-index {
@@ -17,7 +18,7 @@
 }
 
 .message-index li {
-    padding: 5px;
+    margin-bottom: 5px;
 }
 
 .nick {
@@ -48,7 +49,17 @@
     margin-right: 10px;
 
     .avatar {
+        margin: 0px;
         position: absolute;
         left: -50px;
+        top: -5px;
+    }
+}
+
+.message.compact-message {
+    margin-top: 0px;
+
+    .message-body {
+        margin-top: 0px;
     }
 }
