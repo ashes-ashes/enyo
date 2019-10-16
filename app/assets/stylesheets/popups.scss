@@ -100,7 +100,13 @@
         border-bottom: 1px solid $mid-primary;
     }
 
-    .true-icon-input {
+    p {
+        color: $mid-primary
+    }
+
+}
+
+.true-icon-input {
         position: absolute;
         width: 0.1px;
         height: 0.1px;
@@ -160,8 +166,46 @@
         left: 0px;
     }
 
-    p {
-        color: $mid-primary
+
+
+.avatar-form {
+
+    position: absolute;
+    bottom: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 175px;
+    padding: 10px;
+    border-radius: 5px;
+
+    background-color: $primary;
+    color: $primary;
+
+    .icon-input {
+        background-color: $primary;
+        border: 2px solid $dark-primary;
     }
 
+    input[type="text"] {
+        color: $light-primary;
+        background-color: inherit;
+        border-bottom: 2px dashed $darker-primary;
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        height: 30px;
+        border-radius: 2px;
+        background-color: $secondary;
+        color: $lightest-primary;
+    }
+
+    button:hover {
+        background-color: $light-secondary;
+    }
 }
