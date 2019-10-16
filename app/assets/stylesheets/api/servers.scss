@@ -29,6 +29,8 @@
         transition-timing-function: linear;
         position: relative;
 
+        user-select: none;
+
         .server-placeholder {
             font-size: 30px;
             color: $secondary;

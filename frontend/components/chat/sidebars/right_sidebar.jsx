@@ -1,4 +1,5 @@
 import React from 'react';
+import MemberList from './member_list/member_list';
 
 class RightSidebar extends React.Component {
 
@@ -13,14 +14,12 @@ class RightSidebar extends React.Component {
     render() {
 
         return (
-            <div className="right-sidebar-container">
-                {/* {this.props ?
-                    <ul className="user-list">
-                        
-                    </ul> :
-                    ""
-                } */}
+            <div className="right-sidebar">
+                <MemberList />
             </div>
         )
     }
 }
+
+export default RightSidebar;
+

@@ -1,7 +1,7 @@
 
 @import './config-vars.scss';
 
-.settings-dropdown {
+[class*="-dropdown"] {
     background-color: $darkest-primary;
     color: $light-primary;
     padding: 10px 0px;
@@ -10,30 +10,33 @@
     white-space: nowrap;
     position: absolute;
     z-index: 3;
-    left: 60px;
-    top: 8px;
     display: flex;
     flex-direction: column;
     box-shadow: 0px 7px 14px 0px rgba(0,0,0,0.52);
 }
 
-.settings-dropdown li {
+.server-dropdown {
+    left: 60px;
+    top: 8px;
+}
+
+[class*="-dropdown"] li {
     padding: 5px 10px;
 }
 
-.settings-dropdown li:first-child {
+[class*="-dropdown"] li:first-child {
     
 }
 
-.settings-dropdown li:first-of-type {
+[class*="-dropdown"] li:first-of-type {
     color: $mid-primary;
 }
 
-.settings-dropdown li:not(:first-of-type):hover {
+[class*="-dropdown"] li:not(:first-of-type):hover {
     background-color: $dark-secondary;
 }
 
-// .settings-dropdown::after {
+// .server-dropdown::after {
 //     content: "";
 //     position: absolute;
 //     top: 20px;
@@ -54,7 +57,39 @@
     background-color: rgba($color: #000000, $alpha: 0.0)
 }
 
-.channel-index-item .settings-dropdown {
+.channel-index-item [class*="-dropdown"] {
     top: 10px;
     left: 200px;
 }
+
+//@*@*@--- GEAR ---@*@*@//
+
+.settings-container {
+    position: relative;
+}
+
+.gear-dropdown {
+    bottom: 45px;
+    width: 100px;
+    left: -35px;
+}
+
+.gear-dropdown::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    right: 40px;
+    margin-top: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: rgba($color: $darkest-primary, $alpha: 1.0) transparent transparent transparent ;
+}
+
+.logout-link {
+    color: $secondary;
+}
+
+.logout-link:hover {
+    color: white;
+}
+

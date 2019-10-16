@@ -3,6 +3,8 @@ import React from 'react';
 import MessageFormContainer from '../message_area/message_form_container';
 import MessageIndexContainer from '../message_area/message_index_container';
 
+import RightSidebarContainer from '../sidebars/right_sidebar_container';
+
 class Main extends React.Component {
 
     componentDidMount() {
@@ -25,7 +27,7 @@ class Main extends React.Component {
                             <MessageIndexContainer channelId={this.props.match.params.channelId}/>
                             <MessageFormContainer channelId={this.props.match.params.channelId} serverId={this.props.match.params.serverId}/>
                         </div>
-                        <div className="users-index-container"></div>
+                        <RightSidebarContainer />
                     </div>
                 </div>
             )

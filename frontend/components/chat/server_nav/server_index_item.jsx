@@ -11,7 +11,6 @@ class ServerIndexItem extends React.Component {
         this.closeDropdown = this.closeDropdown.bind(this);
     }
 
-
     rightClickHandler(e) {
         e.preventDefault();
         this.props.receiveCurrentModal(`server-dropdown-${this.props.server.id}`);
@@ -19,6 +18,7 @@ class ServerIndexItem extends React.Component {
 
     closeDropdown(e) {
         e.stopPropagation();
+        e.preventDefault();
         this.props.receiveCurrentModal("");
     }
 

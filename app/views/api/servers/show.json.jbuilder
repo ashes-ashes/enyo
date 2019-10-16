@@ -18,6 +18,14 @@ json.channel_servers do
     end
 end
 
+json.server_memberships do
+    @server.memberships.each do |server_membership|
+        json.set! server_membership.id do
+            json.partial! "/api/server_memberships/server_membership", server_membership: server_membership
+        end
+    end
+end
+
 json.users do
     @server.members.each do |user|
         json.set! user.id do

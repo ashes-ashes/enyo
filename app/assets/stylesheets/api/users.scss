@@ -28,44 +28,91 @@
 }
 
 .user-bar .settings-icon {
-    color: $primary;
+    color: #4A4A4A;
+
+    user-select: none;
+}
+
+.user-bar .settings-icon.active {
+    color: $mid-primary;
 }
 
 .user-bar .settings-icon:hover {
-    color: $mid-primary;
+    color: $light-primary;
 }
+
 
 .user-bar .settings-icon:active {
     color: $lightest-primary;
 }
 
-.users-index-container {
+.right-sidebar {
     width: 250px;
     background-color: $dark-primary;
 }
 
 .user-bar .user {
+
     font-size: 14px;
-    .avatar {
+
+    .avatar, .avatar-hover {
         width: 30px;
         height: 30px;
     }
+
 }
 
+
+i {
+    user-select: none;
+}
 
 .user {
 
     display: flex;
     align-items: center;
 
-    .avatar {
+    .avatar-container {
+        margin-right: 5px;
+    }
+
+    .avatar, .avatar-hover {
         width: 40px;
         height: 40px;
         border-radius: 20px;
-        margin: 5px;
+
+        user-select: none;
+    }
+    
+    .avatar-hover {
+        opacity: 0;
+        position: absolute;
+        z-index: 1;
+        background-color: black;
+    }
+
+    .avatar-hover:hover {
+        opacity: 0.2;
     }
 
     .username {
         font-weight: bold;
+    }
+}
+
+// @*@*@---members list---@*@*@ \\
+
+.members-list {
+
+    color: $light-primary;
+    margin: 5px;
+
+    li {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    li:hover {
+        background-color: $darke-primary;
     }
 }

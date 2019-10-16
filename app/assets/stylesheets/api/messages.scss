@@ -18,7 +18,7 @@
 }
 
 .message-index li {
-    margin-bottom: 5px;
+
 }
 
 .nick {
@@ -41,19 +41,22 @@
     display: block;
     margin-top: 5px;
     overflow-wrap: break-word;
+    line-height: 1.5;
 }
 
 .message .user {
 
+    color: $light-primary;
     position: relative;
     margin-right: 10px;
 
-    .avatar {
+    .avatar-container {
         margin: 0px;
         position: absolute;
-        left: -50px;
+        left: -45px;
         top: -5px;
     }
+
 }
 
 .message.compact-message {

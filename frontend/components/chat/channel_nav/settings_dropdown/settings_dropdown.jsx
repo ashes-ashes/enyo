@@ -17,7 +17,7 @@ class SettingsDropdown extends React.Component {
 
     render() {
         return (
-            <ul className="settings-dropdown">
+            <ul className="server-dropdown">
                 {this.props.currentUserId === this.props.serverOwnerId ? <li onClick={this.handleClick("editChannel")}>Edit Channel</li> : ""}
                 {this.props.currentUserId === this.props.serverOwnerId ?
                     <li onClick={this.handleClick("deleteChannel")}>Delete Channel</li> :

@@ -17,7 +17,7 @@ class SettingsDropdown extends React.Component {
 
     render () {
         return (
-            <ul className="settings-dropdown">
+            <ul className="server-dropdown">
                 <li>Invite Code: <span className="invite-code">{this.props.server.invite_code}</span></li>
                 {this.props.currentUserId === this.props.server.owner_id ? <li onClick={this.handleClick("editServer")}>Edit Server</li> : ""}
                 {this.props.currentUserId === this.props.server.owner_id ? 
