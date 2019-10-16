@@ -1,5 +1,5 @@
 
-import * as APIUtil from '../util/server_memberships_api_util';
+import * as APIUtil from '../util/users_api_util';
 
 export const RECEIVE_USER = "RECEIVE_USER";
 
@@ -14,7 +14,7 @@ const receiveUser = (payload) => ({
 
 
 export const updateUser = (formData, userId) => dispatch => (
-    APIUtil.updateServer(formData, userId)
+    APIUtil.updateUser(formData, userId)
         .then(
             (payload) => {
                 dispatch(receiveCurrentModal(""))

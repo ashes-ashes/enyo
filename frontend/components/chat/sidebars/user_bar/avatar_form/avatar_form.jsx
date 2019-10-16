@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import { updateUser } from '../../../../../actions/user_actions';
+
 export class AvatarForm extends Component {
 
     constructor(props) {
@@ -75,7 +77,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    
+    updateUser: (formData, userId) => dispatch(updateUser(formData, userId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AvatarForm)

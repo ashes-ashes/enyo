@@ -47,7 +47,7 @@
 }
 
 .right-sidebar {
-    width: 250px;
+    width: 200px;
     background-color: $dark-primary;
 }
 
@@ -77,12 +77,12 @@ i {
     align-items: center;
 
     .avatar-container {
+        height: 40px;
         margin-right: 5px;
     }
 
     .avatar, .avatar-hover {
-        width: 40px;
-        height: 40px;
+        height: inherit;
         border-radius: 20px;
 
         user-select: none;
@@ -114,6 +114,10 @@ i {
     li {
         padding: 5px;
         border-radius: 5px;
+
+        .avatar-container {
+            margin-right: 10px;
+        }
     }
 
     li:hover {

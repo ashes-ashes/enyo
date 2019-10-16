@@ -5,13 +5,13 @@
 @import '../config-vars.scss';
 
 .message {
-    margin-left: 40px;
+    margin-left: 50px;
     margin-top: 10px;
 }
 
 .message-index {
     width: 100%;
-    padding: 10px;
+    padding: 10px 20px;
     overflow: scroll;
     box-sizing: border-box;
     color: $light-primary
@@ -41,6 +41,7 @@
     display: block;
     margin-top: 5px;
     overflow-wrap: break-word;
+    word-wrap: break-word;
     line-height: 1.5;
 }
 
@@ -53,7 +54,7 @@
     .avatar-container {
         margin: 0px;
         position: absolute;
-        left: -45px;
+        left: -50px;
         top: -5px;
     }
 
