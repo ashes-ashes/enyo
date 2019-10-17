@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_MODAL, TOGGLE_MODAL, RECEIVE_EDIT_ID } from '../../actions/ui_actions';
+import { RECEIVE_CURRENT_MODAL, TOGGLE_MODAL, RECEIVE_EDIT_ID, RECEIVE_OPTIONS } from '../../actions/ui_actions';
 
 const uiReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -14,6 +14,8 @@ const uiReducer = (state = {}, action) => {
         case RECEIVE_EDIT_ID:
             newState.editId = action.editId;
             return newState;
+        case RECEIVE_OPTIONS:
+            return Object.assign(newState, action.options);
         default:
             return state;
     }

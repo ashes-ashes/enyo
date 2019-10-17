@@ -25,7 +25,8 @@ const mapStateToProps = (state, ownProps) => ({
         return membership.server_id == ownProps.match.params.serverId;
     }).map((membership) => {
         return state.entities.users[membership.user_id];
-    })
+    }),
+    channel: state.entities.channels[ownProps.match.params.channelId]
 })
 
 const mapDispatchToProps = {

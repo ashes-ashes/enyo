@@ -5,16 +5,28 @@ import CompactMessage from './message/compact_message';
 
 class MessageIndex extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.scrollToBottom = this.scrollToBottom.bind(this);
+    }
+
     componentDidMount() {
         this.props.fetchChannel();
     }
+
 
     componentDidUpdate(prevProps) {
         if (prevProps.channelId !== this.props.channelId) {
             this.props.fetchChannel();
         }
+        this.scrollToBottom();
     }
 
+    scrollToBottom() {
+        let index = document.getElementById('message-index');
+        index.scroll({top: index.scrollHeight});
+    }
 
     render() {
 
@@ -30,7 +42,7 @@ class MessageIndex extends React.Component {
         })
 
         return (
-            <ul className="message-index">
+            <ul id="message-index" className="message-index">
                 {messageArr}
             </ul>
         )

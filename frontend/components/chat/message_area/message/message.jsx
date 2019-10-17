@@ -4,6 +4,7 @@ import UserContainer from '../../widgets/user_container';
 
 class Message extends React.Component {
 
+
     render() {
         return (
             <li key = { this.props.message.id } className="message">
