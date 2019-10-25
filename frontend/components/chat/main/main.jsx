@@ -7,10 +7,8 @@ import MessageIndexContainer from '../message_area/message_index_container';
 
 import RightSidebarContainer from '../sidebars/right_sidebar_container';
 
-class Main extends React.Component {
 
-    componentDidMount() {
-    }
+class Main extends React.Component {
 
 
     render() {

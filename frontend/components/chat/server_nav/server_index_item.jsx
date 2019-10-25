@@ -19,7 +19,7 @@ class ServerIndexItem extends React.Component {
     closeDropdown(e) {
         e.stopPropagation();
         e.preventDefault();
-        this.props.receiveCurrentModal("");
+        this.props.receiveCurrentModal(null);
     }
 
     render () {

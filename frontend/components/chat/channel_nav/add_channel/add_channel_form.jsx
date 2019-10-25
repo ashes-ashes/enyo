@@ -21,7 +21,7 @@ class AddChannelForm extends React.Component {
     }
 
     handleBlur() {
-        this.props.receiveCurrentModal("");
+        this.props.receiveCurrentModal(null);
     }
 
     handleSubmit(e) {

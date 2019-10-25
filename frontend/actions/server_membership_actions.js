@@ -23,7 +23,7 @@ export const createServerMembership = (inviteCode) => dispatch => (
         .then(
             (payload) => {
                 dispatch(receiveServerMembership(payload))
-                dispatch(receiveCurrentModal(""))
+                dispatch(receiveCurrentModal(null))
             },
             (err) => dispatch(receiveFormErrors(err.responseJSON))
         )
@@ -34,7 +34,7 @@ export const deleteServerMembership = (serverMembershipId) => dispatch => (
         .then(
             (serverMembership) => {
                 dispatch(removeServerMembership(serverMembership))
-                dispatch(receiveCurrentModal(""))
+                dispatch(receiveCurrentModal(null))
             },
             (err) => dispatch(receiveFormErrors(err.responseJSON))
         )

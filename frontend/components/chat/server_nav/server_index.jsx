@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import ServerIndexItemContainer from './server_index_item_container';
 
-export default class ServerIndex extends React.Component {
+class ServerIndex extends React.Component {
 
     constructor(props) {
         super(props);
@@ -19,6 +19,10 @@ export default class ServerIndex extends React.Component {
     componentDidUpdate(prevProps) {
         if (prevProps.servers.length != this.props.servers.length) {
             this.props.receiveCurrentModal();
+        }
+
+        if (this.props.location.pathname === '/servers' && this.props.servers.length > 0) {
+            this.props.history.push(`/servers/${this.props.servers[0].id}`)
         }
     }
 
@@ -42,3 +46,5 @@ export default class ServerIndex extends React.Component {
         )
     }
 }
+
+export default withRouter(ServerIndex);

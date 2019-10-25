@@ -3,6 +3,8 @@ import React from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 
 import SettingsDropdownContainer from './settings_dropdown/settings_dropdown_container';
+import EditChannelForm from './edit_channel_form';
+import { receiveCurrentModal } from '../../../actions/ui_actions';
 
 class ChannelIndexItem extends React.Component {
 
@@ -10,6 +12,7 @@ class ChannelIndexItem extends React.Component {
         super(props);
         this.clickHandler = this.clickHandler.bind(this);
         this.rightClickHandler = this.rightClickHandler.bind(this);
+        this.editHandler = this.editHandler.bind(this);
         // this.closeDropdown = this.closeDropdown.bind(this);
     }
 
@@ -27,13 +30,24 @@ class ChannelIndexItem extends React.Component {
         this.props.receiveCurrentModal(`channel-dropdown-${this.props.channel.id}`);
     }
 
+    editHandler() {
+        this.props.receiveCurrentModal(`edit-channel-${this.props.channel.id}`);
+    }
+
     // closeDropdown(e) {
     //     e.stopPropagation();
     //     this.props.receiveCurrentModal();
     // }
 
     render () {
-        return (
+        if (this.props.modal == `edit-channel-${this.props.channel.id}`) {
+            return (
+                <li>
+                    <EditChannelForm channel={this.props.channel} />
+                </li>
+            )
+        } else {
+            return (
             <li className="channel-index-item tooltip" onClick={this.clickHandler} onContextMenu={this.rightClickHandler}>
                 <NavLink to={`/servers/${this.props.match.params.serverId}/channels/${this.props.channel.id}`} activeClassName="active">
                     <div className="channel-label">
@@ -46,7 +60,7 @@ class ChannelIndexItem extends React.Component {
                     {this.props.server.owner_id === this.props.currentUserId
                         ?
                         <div className="settings-icon-container">
-                            <i className="material-icons">
+                            <i className="material-icons" onClick={this.editHandler}>
                                 edit
                             </i>
                             <i className="material-icons delete-button" onClick={this.clickHandler("deleteChannel")}>
@@ -65,7 +79,8 @@ class ChannelIndexItem extends React.Component {
                         ""} */}
                 </NavLink>
             </li>
-        )
+            )
+        }
     }
 }
 

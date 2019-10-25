@@ -49,7 +49,7 @@ export const updateServer = (formData, serverId) => dispatch => (
     APIUtil.updateServer(formData, serverId)
         .then(
             (payload) => {
-                dispatch(receiveCurrentModal(""))
+                dispatch(receiveCurrentModal(null))
                 dispatch(receiveServer(payload))
             }
         )
@@ -60,7 +60,7 @@ export const deleteServer = (serverId) => dispatch => (
         .then(
             () => {
                 dispatch(removeServer(serverId))
-                dispatch(receiveCurrentModal(""))
+                dispatch(receiveCurrentModal(null))
             }
         )
 )

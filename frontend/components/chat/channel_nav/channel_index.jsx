@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { withRouter } from 'react-router-dom';
 
 import ChannelIndexItemContainer from "./channel_index_item_container";
 import AddChannelFormContainer from "./add_channel/add_channel_form_container";
@@ -23,6 +24,10 @@ class ChannelIndex extends React.Component {
         }
         else if (this.props.channels.length != prevProps.channels.length) {
             this.props.receiveCurrentModal();
+        }
+
+        if (this.props.location.pathname === `/servers/${this.props.serverId}` && this.props.channels.length > 0) {
+            this.props.history.push(`/servers/${this.props.serverId}/channels/${this.props.lastChannel || this.props.channels[0].id}`)
         }
     }
 
@@ -58,4 +63,4 @@ class ChannelIndex extends React.Component {
     }
 }
 
-export default ChannelIndex;
+export default withRouter(ChannelIndex);

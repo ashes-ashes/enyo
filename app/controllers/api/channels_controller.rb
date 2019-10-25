@@ -23,10 +23,22 @@ class Api::ChannelsController < ApplicationController
 
             render :show
         else 
-            render json: @server.errors.full_messages, status: 422
+            render json: @channel.errors.full_messages, status: 422
         end
 
     end
+
+    def update
+        @channel = Channel.find_by(id: params[:id])
+
+        if @channel.update(channel_params)
+            render :show
+        else
+            render json: @channel.errors.full_messages, status: 422
+        end
+
+    end
+
 
     def destroy
 
@@ -38,6 +50,12 @@ class Api::ChannelsController < ApplicationController
             render @channel.errors.full_messages, status: 400
         end
 
+    end
+
+    private
+
+    def channel_params
+        params.require(:channel).permit(:name, :private)
     end
 
 end

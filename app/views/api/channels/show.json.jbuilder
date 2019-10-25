@@ -11,9 +11,11 @@ json.channel_servers do
 end
 
 json.messages do
-    @channel.messages.each do |message|
-        json.set! message.id do
-            json.partial! "/api/messages/message", message: message
+    if @messages
+        @messages.each do |message|
+            json.set! message.id do
+                json.partial! "/api/messages/message", message: message
+            end
         end
     end
 end

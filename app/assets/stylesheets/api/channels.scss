@@ -18,6 +18,7 @@
 
 .server-name-box {
     height: 50px;
+    box-sizing: border-box;
     border-bottom: 2px solid $darker-primary;
     display: flex;
     flex-direction: row;
@@ -37,7 +38,7 @@
     color: $mid-primary
 }
 
-.channel-index li a, .channel-index .add-channel-form-container, .add-channel-button {
+.channel-index li a, .channel-index [class$="-channel-form-container"], .add-channel-button {
     width: 215px;
     padding: 5px 10px;
     box-sizing: border-box;
@@ -80,11 +81,11 @@
 }
 
 
-.channel-index .add-channel-form-container {
+.channel-index [class$="-channel-form-container"] {
     justify-content: flex-start
 }
 
-.channel-index li a:hover, .add-channel-form-container:hover, .add-channel-button:hover {
+.channel-index li a:hover, [class$="-channel-form-container"]:hover, .add-channel-button:hover {
     background-color: rgba($color: #FFFFFF, $alpha: 0.03);
     color: $light-primary;
 
@@ -125,7 +126,7 @@
     // font-weight: bold;
 }
 
-.add-channel-form-container {
+[class$="-channel-form-container"] {
 
     form {
         display: flex;

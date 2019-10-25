@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 
+import { receiveLastChannel } from '../../../actions/ui_actions';
 // import { fetchChannel } from '../../../actions/channel_actions';
 
 import Main from './main'
@@ -9,6 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+    
 });
 
 export default connect(

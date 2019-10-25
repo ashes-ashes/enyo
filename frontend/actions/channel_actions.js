@@ -4,6 +4,7 @@ export const REMOVE_CHANNEL = "REMOVE_CHANNEL"
 
 import * as APIUtil from '../util/channels_api_util';
 import { receiveFormErrors } from './error_actions';
+import {receiveCurrentModal} from './ui_actions';
 
 const receiveChannel = (payload) => ({
     type: RECEIVE_CHANNEL,
@@ -30,6 +31,16 @@ export const createChannel = (name, serverId) => dispatch => (
             (err) => dispatch(receiveFormErrors(err))
         )
 );
+
+export const updateChannel = (data, channelId) => dispatch => (
+    APIUtil.updateChannel(data, channelId)
+        .then(
+            (payload) => {
+                dispatch(receiveCurrentModal(null))
+                dispatch(receiveChannel(payload))
+            }
+        )
+)
 
 export const deleteChannel = (channelId) => dispatch => (
     APIUtil.deleteChannel(channelId)

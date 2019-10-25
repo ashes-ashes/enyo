@@ -39,7 +39,7 @@ const Popup = (props) => {
     };
 
     let closePopup = () => {
-        props.receiveCurrentModal("");
+        props.receiveCurrentModal(null);
     }
 
     return (

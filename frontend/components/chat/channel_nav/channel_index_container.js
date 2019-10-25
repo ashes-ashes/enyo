@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => ({
             state.entities.channels[channelServer.channel_id]
         ),
     modal: state.ui.currentModal,
-    currentUserId: state.session.id
+    currentUserId: state.session.id,
+    lastChannel: state.ui.lastChannel[ownProps.serverId]
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

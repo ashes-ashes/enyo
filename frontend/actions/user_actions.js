@@ -17,7 +17,7 @@ export const updateUser = (formData, userId) => dispatch => (
     APIUtil.updateUser(formData, userId)
         .then(
             (payload) => {
-                dispatch(receiveCurrentModal(""))
+                dispatch(receiveCurrentModal(null))
                 dispatch(receiveUser(payload))
             }
         )

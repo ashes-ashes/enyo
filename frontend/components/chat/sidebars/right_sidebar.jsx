@@ -15,6 +15,7 @@ class RightSidebar extends React.Component {
 
         return (
             <div className="right-sidebar">
+                
                 <MemberList />
             </div>
         )

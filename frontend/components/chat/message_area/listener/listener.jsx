@@ -17,6 +17,7 @@ class Listener extends React.Component {
         if (this.props.channelId !== prevProps.channelId) {
             if (this.props.channelId) {
                 this.createSocket(this.props.channelId);
+                this.props.receiveLastChannel();
             }
         }
     }

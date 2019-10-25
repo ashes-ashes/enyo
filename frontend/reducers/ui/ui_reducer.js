@@ -1,6 +1,12 @@
-import { RECEIVE_CURRENT_MODAL, TOGGLE_MODAL, RECEIVE_EDIT_ID, RECEIVE_OPTIONS } from '../../actions/ui_actions';
+import { 
+    RECEIVE_CURRENT_MODAL, 
+    TOGGLE_MODAL,
+    RECEIVE_EDIT_ID,
+    RECEIVE_LAST_CHANNEL,
+    RECEIVE_OPTIONS 
+} from '../../actions/ui_actions';
 
-const uiReducer = (state = {}, action) => {
+const uiReducer = (state = {lastChannel: {}}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
 
@@ -13,6 +19,9 @@ const uiReducer = (state = {}, action) => {
             return newState;
         case RECEIVE_EDIT_ID:
             newState.editId = action.editId;
+            return newState;
+        case RECEIVE_LAST_CHANNEL:
+            newState.lastChannel[action.serverId] = action.channelId;
             return newState;
         case RECEIVE_OPTIONS:
             return Object.assign(newState, action.options);
