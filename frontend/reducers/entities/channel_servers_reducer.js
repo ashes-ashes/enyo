@@ -18,7 +18,7 @@ const channelServersReducer = (state = {}, action) => {
             return Object.assign({}, state, action.payload.channel_servers);
         case REMOVE_SERVER:
             Object.values(newState).forEach((channel_server) => {
-                if ( channel_server.server_id === serverId ) {
+                if ( channel_server.server_id === action.serverId ) {
                     delete newState[channel_server.id]
                 }
             })

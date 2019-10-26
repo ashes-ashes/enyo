@@ -5,8 +5,6 @@ export class User extends Component {
 
     render() {
 
-        
-
         return (
             <div className="user">
                 <div className="avatar-container">

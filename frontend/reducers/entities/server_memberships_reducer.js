@@ -8,9 +8,11 @@ const serverMembershipsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            Object.keys(action.payload.server_memberships).forEach((id) => {
-                newState[id] = action.payload.server_memberships[id]
-            })
+            if (!!action.payload.server_memberships) {
+                Object.keys(action.payload.server_memberships).forEach((id) => {
+                    newState[id] = action.payload.server_memberships[id]
+                })
+            }
             return newState;
         case RECEIVE_SERVER:
             return Object.assign(newState, action.payload.server_memberships);
