@@ -25,8 +25,8 @@ export default class SessionForm extends React.Component {
     handleDemoLogin(e) {
         e.preventDefault();
         let user = {
-            email: "hermes@olympus.io",
-            password: "psychopomp"
+            email: "seer@gaia.net",
+            password: "seesall"
         };
         this.props.processForm(user);
     }
