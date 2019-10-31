@@ -226,3 +226,4 @@ chariotconvo = [{
 Message.create(chariotconvo)
 
 Channel.find_by(id: 1).delete
+ChannelServer.find_by(channel_id: 1).delete
