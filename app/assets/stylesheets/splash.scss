@@ -7,10 +7,15 @@
 }
 
 .splash {
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    background-image: url(/splashbackground.png);
+    background-position: center;
+    background-size: cover;
 }
 
 .splash-header {
@@ -97,15 +102,18 @@ h2 {
 
 .splash .logo-unicode {
     font-size: 40px;
+    // width: 40px;
+    transform: scaleY(.7);
+    margin-right: 2px;
     color: $secondary;
 }
 
-.background-image {
-    position: absolute;
-    min-height: 100vh;
-    max-height: 56.25vw;
-    min-width: 100vw;
+// .background-image {
+//     position: absolute;
+//     min-height: 100vh;
+//     max-height: 56.25vw;
+//     min-width: 100vw;
     
-    top: 0px;
-    z-index: -1;
-}
+//     top: 0px;
+//     z-index: -1;
+// }

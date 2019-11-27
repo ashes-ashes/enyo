@@ -21,7 +21,7 @@ const Splash = (props) => (
                     <li><Link to="/signup">sign up</Link></li>
                 </ul> }
         </header>
-        <img src="splashbackground.png" className="background-image"/>
+        
         <div className="splash-text">
             <h2>speak now or forever hold your peace.</h2>
             <h3>enyo is a chat client for the belligerent and strange.</h3>
